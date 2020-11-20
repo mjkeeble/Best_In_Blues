@@ -1,0 +1,146 @@
+
+/* font-family: 'Libre Baskerville', serif; */
+$blue-0: #CBCDCE;	// Main Primary color */
+$blue-1: #667E8E;
+$blue-2: #2C526A;
+$blue-3: #042C46;
+$blue-4: #001522;
+
+
+$gold-0: #FFFEFC;// Main Secondary color (1) */
+$gold-1: #DECC9C;
+$gold-2: #A68B3E;	
+$gold-3: #6D5100;
+$gold-4: #352700;
+
+$brown-0: #FFFDFC;// Main Secondary color (2) */
+$brown-1: #DEAD9C;
+$brown-2: #A6593E;	
+$brown-3: #6D1C00;
+$brown-4: #350E00;
+
+/*---Media queries---*/
+@media (max-width: 992px){
+
+}
+@media (max-width: 768px){
+
+}
+@media (max-width: 576px){
+
+}
+
+/*--------*/
+
+html, body {
+    margin: 0;
+    padding: 0;
+    max-width: 1500px;
+}
+
+body{
+    font-family: roboto;
+    font-size: 16px;
+    line-height: 1.5em;
+    font-weight: 500;
+}
+
+header{
+    display:flex;
+    justify-content: space-between;
+    margin: 0em;
+}
+
+hr{
+    max-width: 100%;
+    color: $blue-4;
+    margin: 0;
+}
+
+.navbar_logo{
+    width: 130px;
+    height: auto;
+    margin-top: 10px;
+}
+
+nav {
+
+    height: auto;
+    display: flex;
+    justify-content: flex-end;
+    flex-basis: 1000px;
+    border-bottom: 2px solid $blue-4;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: top;
+    margin: 0;
+    margin-right: 1em;
+    padding-top: 3px;
+}
+
+nav a {
+    text-decoration: none;
+    font-weight: 400;
+    color: $blue-4;
+    margin-left: 2em;
+    height: 50px;
+    &:hover {
+          font-weight: 700;
+    }
+}
+.container-fluid{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+nav a:hover {
+
+    text-decoration: none;
+    color: $blue-3;
+}
+
+#main_graphic{
+    display:flex;
+    justify-content:space-evenly;
+    background: $blue-4;
+    padding: 2em;
+    padding-top: 0;
+    height: 700px;
+}
+
+.big_logo{
+    width: 500px;
+    height: auto;
+    color:gray
+}
+
+.cover_photo{
+height: 100%;
+width: auto;
+margin-left: 50px;
+margin-right: 300 px;
+margin-top: 32px;
+}
+
+/*
+Extra small (xs) devices (portrait phones, less than 576px)
+No media query since this is the default for Bootstrap
+
+Small (sm) devices (landscape phones, 576 px and up)
+@media (max-width: 576px){ ... }
+
+Medium (md) devices (tablets, 768 px and up)
+@media (max-width: 768px){ ... }
+
+Large (lg) devices (desktops, 992 px and up)
+@media (max-width: 992px){ ... }
+
+Extra large (xl) devices (large desktops, 1200 px and up)
+@media (max-width: 1200px){ ... }
+*/
