@@ -35,7 +35,7 @@ $brown-4: #350E00;
 html, body {
     margin: 0;
     padding: 0;
-    max-width: 1500px;
+    background-color: $blue-1;
 }
 
 body{
@@ -43,6 +43,7 @@ body{
     font-size: 16px;
     line-height: 1.5em;
     font-weight: 500;
+    background-color: #667E8E;
 }
 
 header{
