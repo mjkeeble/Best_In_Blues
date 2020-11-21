@@ -3,7 +3,7 @@
 const express = require('express');
 const router  = express.Router();
 const Admin = require('../models/Admin');
-const News = require('../models/');
+const News = require('../models/News');
 
 
 //router.get('/news/delete/:id', (req, res) => {

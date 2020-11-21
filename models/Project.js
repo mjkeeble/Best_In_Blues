@@ -9,5 +9,5 @@ const projectSchema = new Schema({
     link: String
 });
 
-const Project = mongoose.model('Project', adminSchema);
+const Project = mongoose.model('Project', projectSchema);
 module.exports = Project;

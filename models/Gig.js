@@ -14,5 +14,5 @@ const gigSchema = new Schema({
     comment: String
 });
 
-const Gig = mongoose.model('Gig', adminSchema);
+const Gig = mongoose.model('Gig', gigSchema);
 module.exports = Gig;

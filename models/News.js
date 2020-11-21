@@ -8,9 +8,9 @@ const newsSchema = new Schema({
     //date modified
     link: String,
     timestamps: {
-        updatedAt: 'updated_at'
+        updatedAt: Number
     }
 });
 
-const News = mongoose.model('News', adminSchema);
+const News = mongoose.model('News', newsSchema);
 module.exports = News;
