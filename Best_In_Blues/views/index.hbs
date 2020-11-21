@@ -1,72 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="container-fluid">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jan Hirte - The Best In Blues</title>
-    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
-        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
-</head>
+    {{!-- Über mich --}}
+    <div class="ueber_mich col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <h1>Über mich</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur excepturi deleniti ducimus eaque quidem
+            magni
+            vero facilis, dolore voluptatum cumque voluptates beatae delectus cupiditate dolores illo recusandae debitis
+            nostrum sed.
+        </p>
+    </div> {{!-- end ueber mich --}}
 
-<body>
-    <container id="main_graphic" class="container-fluid">
-        <img class="big_logo" src="resources/jan_logo_l_white.svg" alt="Jan Hirte - The Best In Blues">
-        <img class="cover_photo" src="resources/Jan-Hirte-Dozent-cropped.jpg" alt="Jan Hirte - cover photo">
-    </container>
-    <!--Navbar-->
+    <div id="frontpage_grid_right col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+        <div id="index_termine">
+            <h1>Termine</h1>
+            {{!-- nächste Termine --}}
+            <a href="#">Alle termine</a>
+        </div>{{!-- end index_termine  --}}
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
-        <div class="container-fluid">
-            <img class="navbar_logo navbar-brand" alt="Navbar logo" src="resources/jan_logo_s.svg" />
-            
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+        <div id="index_aktuelles">
+            <h1>Aktuelles</h1>
+            {{!-- neuste nachricht --}}
+            <a href="#">Mehr aktuelles</a>
+        </div> {{!--  end index_aktuelles--}}
+    </div>{{!-- end frontpage_grid_right --}}
 
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-item active" href='#'>Über mich</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Aktuelles</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Live</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Projekte</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Shop</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Galerie</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Unterricht</a></li>
-                    <li class="nav-item">
-                        <a class="nav-item" href='#'>Kontakt</a></li>
-                </ul>
+</div>{{!-- end container_fluid --}}
+<div class="cards">
+    {{!-- projekte --}}
+    <h1>Projekte</h1>
 
-            </div>
-        </div>
-
-    </nav>
+    {{!-- shop --}}
 
 
 
+    {{!-- unterricht --}}
 
+    Kontakt
 
-    
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-        crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
-        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
-        crossorigin="anonymous"></script>
-    <script src="https://use.fontawesome.com/releases/v5.08/js/all.js"></script>
-</body>
-
-</html>
+</div>

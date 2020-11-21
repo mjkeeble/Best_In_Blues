@@ -18,7 +18,7 @@ const Admin = require('../models/Admin');
     //update admin based on edit form
 // });
 
-//router.get('a/dmin/add/', (req, res) => {
+//router.get('/admin/add/', (req, res) => {
     //open admin add form
 // });
 

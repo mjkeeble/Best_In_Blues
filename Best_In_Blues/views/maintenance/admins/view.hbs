@@ -1,0 +1,17 @@
+<h1>Current admins</h1>
+{{#each admin}}
+<div id="admin-form">
+    <form action="admin/delete/{{_id}}" method="get" class="admin-list-row"></form>
+    <div class="record-list-item">
+        <p>Name</p>
+        <h4>adminName</h4>
+    </div>
+    <div class="record-form-buttons">
+        <button class="edit-button" name="action" type="submit" value="edit">Edit Admin</button>
+        <br>
+        <button class="delete-button" name="action" type="submit" value="delete">DELETE Admin</button>
+    </div>
+    </form>
+</div>
+{{/each}}
+<br>

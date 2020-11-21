@@ -1,0 +1,22 @@
+<h1>Add an admin</h1>
+{{#with admin}}
+<div id="admin-form">
+    <form action="/admin/edit/{{_id}}" method="post">
+
+        <label for="adminName">Admin name</label>
+        <input type="text" name="adminName" id="adminName" value="{{adminName}}" required>
+
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" required>
+
+        <label for="password2">Please re-enter your password</label>
+        <input type="password" name="password2" id="password2" required>
+
+        {{#if message}}
+        <p>{{message}}</p>
+        {{/if}}
+        <button class="edit-button" name="action" type="submit" value="edit">Add admin</button>
+        <br>
+        <button class="delete-button" name="action" type="submit" value="cancel">Cancel</button>
+    </form>
+</div>
