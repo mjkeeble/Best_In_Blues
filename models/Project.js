@@ -2,11 +2,13 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
-    title: String,
+    name: String,
+    members: [{member: String}],
     description: String,
-    members: [{name: String, instrument:String}],
     image: String,
-    link: String
+    linkUrl: String,
+    linkText: String,
+    display: Boolean
 });
 
 const Project = mongoose.model('Project', projectSchema);

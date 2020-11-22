@@ -8,8 +8,8 @@ const gigSchema = new Schema({
     venue: String,
     status: {
         type: String,
-        enum:['', 'BESTÄTIGT', 'VERSCHOBEN', 'ABGESAGT'],
-        default: ''
+        enum:["", "BESTÄTIGT", "VERSCHOBEN", "ABGESAGT"],
+        default: ""
     },
     comment: String
 });

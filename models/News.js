@@ -5,10 +5,16 @@ const newsSchema = new Schema({
     title: String,
     text: String,
     image: String,
-    //date modified
-    link: String,
+    link: [
+        {
+            url: String,
+            linkText: String
+        },
+    ],
+}, {
     timestamps: {
-        updatedAt: Number
+        createdAt: "created_at",
+        updatedAt: "updated_at"
     }
 });
 
