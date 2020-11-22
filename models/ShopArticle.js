@@ -7,11 +7,9 @@ const shopArticleSchema = new Schema({
     year: Number,
     description: String,
     price: Number,
-    promotion:{
-        promotionText: String,
-        promotionImage: String
-    },
-    endorsements:[{quote: String, source: String}],
+    promotionText: String,
+    promotionImage: String,
+    endorsements: [{ quote: String, source: String }],
     available: Boolean,
     delivery: String,
     image: String
