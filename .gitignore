@@ -1,0 +1,16 @@
+# Dependency directory
+node_modules
+
+# Debug log from npm
+npm-debug.log
+
+# Environment Variables should NEVER be published
+# We are submitting it for learning purposes 
+ .env
+
+# for maintenance purposes - not best practices
+package-lock.json
+
+# Style css and css.map files are complied by Sass so no need to replicate them
+**/style.css.map
+**/style.css

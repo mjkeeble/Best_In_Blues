@@ -12,7 +12,8 @@ const shopArticleSchema = new Schema({
     endorsements: [{ quote: String, source: String }],
     available: Boolean,
     delivery: String,
-    image: String
+    image: String,
+    spotify: String
 });
 
 const ShopArticle = mongoose.model('ShopArticle', shopArticleSchema);
