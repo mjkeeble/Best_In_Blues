@@ -1,23 +1,23 @@
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
 });
 
-router.get('/shop', (req, res, next) =>{
+router.get('/shop', (req, res, next) => {
   console.log(`calling shop`);
-    ShopArticle.find()
-    then.(article => {
-  res.render('shop/shopArticles', { article: article });
-})
-.catch(err =>
-  console.log(`Error while getting articles:`, err));
+  ShopArticle.find()
+    .then(article => {
+      res.render('shop/shopArticles', { article: article });
+    })
+    .catch(err =>
+      console.log(`Error while getting articles:`, err));
 });
 
 router.get('/projects', (req, res, next) => {
-  console.log(`calling projects`);  
+  console.log(`calling projects`);
   res.render('projects');
 });
 

@@ -32,7 +32,7 @@ const seedProjects = [
             { "member": "Matthias Falkenau - Piano/Orgel/Gesang"}
         ],
         "description": "Eine gegenwärtige, höchst lebendige, meist heitere Reise durch die Geschichte der populären Musik - Ragtime, Boogie, Swing und Country, Blues-Klassiker und Jazz-Standards wechseln sich ab mit Eigenkompositionen. Das ganze getoppt von der fantastischen Stimme von Jessie Gordon. Die aktuelle CD „unknowable journey“ wurde ausgezeichnet in der Bestenliste des Preises der deutschen Schallplattenkritik als bestes Album!",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143967/janhirte/ginger_blues_bw_zaengm.jpg",
         "display": true
     },
     {
@@ -44,7 +44,7 @@ const seedProjects = [
             { "member": "Jan Hirte - Gitarre/Gesang"}
         ],
         "description": "Mitch Kashmar gehört weltweit zu den Top 5 an der Harp. Bekannt geworden durch seine Band „Pontiax“ und seine Arbeit bei „War“. Begleitet von dem Virtuosen Niels von der Leyen am Boogie Piano und dem Blues Award Gewinner Andreas Bock am Schlagzeug.",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143963/janhirte/kings_portrait_Uwe_Arens_cv1hqg.jpg",
         "display": true
     },
     {
@@ -57,7 +57,7 @@ const seedProjects = [
             { "member": "Jan Hirte - Gitarre/Gesang"}
         ],
         "description": "Die Crème de la Crème der Berliner Blues Szene. International besetzt mit Musikern aus Japan, USA und Deutschland. Dorrey’s gewaltige Stimme begeistert jedesmal die Zuhörer. Die Band fand sich zusammen bei Sessions im legendären Berliner Club „White Trash Fast Food“ und bildet ein starkes Fundament.",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143967/janhirte/Berlin_Blues_Allstars_hwtuum.jpg",
         "display": true
     },
     {
@@ -70,7 +70,6 @@ const seedProjects = [
             { "member": "Frank Rihm - Harp/Gesang"}
         ],
         "description": "Eine Fusion aus den Blues & Boogie Kings und Ginger Blues. Entstanden zu Corona Zeiten auf einem Festival in der Schweiz. Gespielt wird Blues, Blues, Blues. Special guest aus Bremen Frank Rihm an der Harp & Gesang.",
-        "image": "",
         "display": true
     },
     {
@@ -83,7 +82,7 @@ const seedProjects = [
             { "member": "Jan Hirte - Gitarre/Gesang"}
         ],
         "description": "Zydeco & Cajun at it’s best. Akkordeon satt von Anja Baldauf, the Queen of Zydeco in Deutschland. Es darf getanzt werden!",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143967/janhirte/ZASW_gaimrl.jpg",
         "display": true
     },
     {
@@ -95,7 +94,7 @@ const seedProjects = [
             { "member": "Jan Hirte - Gitarre/Gesang"}
         ],
         "description": "Alex und Jan harmonieren perfekt mit 2 stimmigem Gesang und gefühlvoll interpretierten Songs von Keb Mo, Imelda Mae, Slim Harpo …",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143969/janhirte/Rollin_Sapphires_jbvnpe.jpg",
         "display": true
     },
     {
@@ -107,21 +106,10 @@ const seedProjects = [
             {"member":"Jan Hirte - Gitarre"}
         ],
         "description": "Gespielt werden rein instrumental Klassiker des Souls und Jazz/Blues von z.B. Stevie Wonder, Stuff, John Scofield, Ray Charles ….",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143971/janhirte/Made_My_Day_Bandfoto_2_Foto_by_Greta_Falkenau_j4h0sz.jpg",
         "display": true
     },
-    {
-        "name": "Mademyday",
-        "members": [
-            {"member": "Matthias Falkenau - Orgel/Piano"},
-            {"member": "Arcadius Didavi - Bass"},
-            {"member": "Max Grevenbrock - Schlagzeug"},
-            {"member": "Jan Hirte - Gitarre"}
-        ],
-        "description": "Gespielt werden rein instrumental Klassiker des Souls und Jazz/Blues von z.B. Stevie Wonder, Stuff, John Scofield, Ray Charles ….",
-        "image": "",
-        "display": true
-    },
+
     {
         "name": "Musicians United Against Corona",
         "members": [
@@ -137,7 +125,7 @@ const seedProjects = [
             {"member": "Konzert 10: Amelie (Amy) Protscher und Jan Hirte"}
         ],
         "description": "Eine Reihe Wohnzimmer-,Schlafzimmer- und geschlossene-Kneipe-Nebenan-Konzerte mit befreundeten Musiker aus der Berliner Bluesszene veranstaltet im Frühjahr/Sommer 2020 zur Unterstützung der Beteiligten.Alle Konzerte sind inzwischen in volle Länge auf YouTube zu sehen",
-        "image": "",
+        "image": "https://res.cloudinary.com/markjkeeble/image/upload/v1606143970/janhirte/Jan_SysIrrelevant_qz42fj.jpg",
         "linkUrl": "https://www.youtube.com/playlist?list=PLNkdr6DJUuem0tF-rhDC06LFFBn2stQ9O",
         "linkText": "Musicians United Against Corona auf YouTube",
         "display": true

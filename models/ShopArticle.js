@@ -13,7 +13,8 @@ const shopArticleSchema = new Schema({
     available: Boolean,
     delivery: String,
     image: String,
-    spotify: String
+    spotify: String,
+    shoppingcart: String
 });
 
 const ShopArticle = mongoose.model('ShopArticle', shopArticleSchema);
