@@ -99,5 +99,46 @@ Large (lg) devices (desktops, 992 px and up)
 Extra large (xl) devices (large desktops, 1200 px and up)
 @media (max-width: 1200px){ ... }
 */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif; }
+
+.box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  height: 50vh;
+  background-color: red;
+  border: 10px solid black;
+  font-size: 50px;
+  transition-duration: 1s;
+  background-position: top;
+  background-size: cover; }
+
+.box:hover {
+  background-color: blue;
+  flex: 4; }
+
+.container {
+  display: flex;
+  height: 100vh;
+  align-items: center; }
+
+.box:nth-of-type(1) {
+  background-image: url("https://www.bluescamp.de/wp-content/uploads/2015/02/Jan-Hirte-Dozent.jpg"); }
+
+.box:nth-of-type(2) {
+  background-image: url("https://i.ytimg.com/vi/a39YpP3T3-8/maxresdefault.jpg"); }
+
+.box:nth-of-type(3) {
+  background-image: url("https://fotos.verwaltungsportal.de/seitengenerator/gross/blue_ribbon_2015.jpeg"); }
+
+.box:nth-of-type(4) {
+  background-image: url("https://a1-images.myspacecdn.com/images03/2/004c7f609bf0490aaac97f251601983e/600x600.jpg"); }
+
+.box:nth-of-type(5) {
+  background-image: url("https://www.blueslover.de/albums/Jazzclub%20Bielefeld%20Kat%20%20Baloun/normal_9N1A5223.jpg"); }
 
 /*# sourceMappingURL=style.css.map */
