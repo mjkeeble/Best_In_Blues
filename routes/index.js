@@ -7,7 +7,13 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/shop', (req, res, next) =>{
-  res.render('shop/shopArticles');
+  console.log(`calling shop`);
+    ShopArticle.find()
+    then.(article => {
+  res.render('shop/shopArticles', { article: article });
+})
+.catch(err =>
+  console.log(`Error while getting articles:`, err));
 });
 
 router.get('/projects', (req, res, next) => {
