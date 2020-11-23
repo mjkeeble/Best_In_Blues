@@ -1,0 +1,10 @@
+<h1>Aktuelles</h1>
+{{each news}}
+<div class="goldbox">
+    <img src="{{image}}" alt="{{title}}">
+    <div>
+        <h3>{{title}}</h3>
+        <p>{{text}}</p>
+        <p class="datestamp">Datum: <i>{{updated_at}}</i></p>
+    </div>
+</div>
