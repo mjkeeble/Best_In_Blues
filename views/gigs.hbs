@@ -3,13 +3,13 @@
 <div class="goldbox">
     <table>
         <tr>
-            <th>{{date}}{{if enddate}} - {{enddate}}{{/if}}</th>
+            <th>{{date}}{{#if enddate}} - {{enddate}}{{/if}}</th>
             <th>{{town}}</th>
             <th>{{status}}</th>
         </tr>
         <tr>
             <td></td>
-            <td>{{venue}}{{if comment}}
+            <td>{{venue}}{{#if comment}}
                 <br>
                 {{comment}}{{/if}}
             </td>

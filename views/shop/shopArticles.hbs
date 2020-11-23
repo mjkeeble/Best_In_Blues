@@ -1,2 +1,19 @@
+<h1>Shop</h1>
 
-{{!--  Display  products --}}
+{{#each article}}
+
+<div class="goldbox">
+    <form action="/addArticle/{{_id}}" method="get"></form>
+    <img src="{{image}}" alt="{{title}}">
+    <div class="articleDetails">
+
+    </div>
+    <div class="purchase">
+        <p>Verfügbar: {{#if available}}Ja{{else}}Nein{{/if}}</p>
+        {{#if delivery}}<p>Lieferzeit: {{delivery}}</p>
+        {{#if available}} <h6>Preis: €{{preis}}*</h6>
+<button type="submit">In den Warenkorb</button>
+    </div>
+</div>
+{{/each}}
+<p id="versandkosten">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
