@@ -1,0 +1,25 @@
+<h1>Neuer Admin hinzufügen</h1>
+<div class="admin-form">
+    <form action="/admin/add" method="post">
+
+        <label for="adminName">Name</label>
+        <input type="text" name="adminName" id="adminName" required>
+
+        <label for="Email">Email</label>
+        <input type="email" name="email" id="email" required>
+
+        <label for="password">Passwort</label>
+        <input type="text" name="password" id="password" required>
+
+        <label for="password2">Bitte Passwort nochmal eingeben</label>
+        <input type="password" name="password2" id="password2" required>
+
+        {{#if message}}
+        <p>{{message}}</p>
+        {{/if}}
+        <div class="buttonflex">
+            <button class="edit-button" name="action" type="submit" value="add">Hinzufügen</button>
+            <a href="#">Zurück</a>
+        </div>
+    </form>
+</div>
