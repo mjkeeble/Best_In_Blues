@@ -1,0 +1,27 @@
+<h1>Meldung bearbeiten</h1>
+{{news}}
+<div class="goldbox">
+    <form action="#" method="post">
+        <label for="title">Titel</label>
+        <input type="text" name="title" id="title" value="{{title}}" required>
+
+        <label for="text">Text</label>
+        <textarea name="text" id="text" width="100%" rows="10" value="{{text}}" required></textarea>
+
+        <label for="image"></label>
+        {{!-- image upload with Couldinary --}}
+
+        {{!-- how to manage multiple urls?? --}}
+        <label for="url">Link url</label>
+        <input type="text" name="url" id="url" value="url">
+
+        <label for="linkText">Linkbeschriftung</label>
+        <input type="text" name="linkText" id="linkText" value="linkText">
+
+        <div class="buttonflex">
+            <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
+            <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
+            <a href="#">Zurück</a>
+        </div>
+    </form>
+</div>

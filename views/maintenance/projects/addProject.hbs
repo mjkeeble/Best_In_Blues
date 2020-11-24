@@ -1,0 +1,32 @@
+<h1>Neues Projekt</h1>
+
+<div class="goldb">
+    <label for="name">Projektname</label>
+    <input type="text" name="name" id="name" required>
+
+    <label for="members">Mitglieder</label>
+    {{!-- how to input?manage multiple members --}}
+
+    <label for="description">Beschreibung</label>
+    <textarea name="description" id="description" width="100%" rows="10"></textarea>
+
+    <label for="image">Bild (url)</label>
+    <input type="text" name="image" id="image">
+
+    <label for="linkUrl">URL</label>
+    <input type="text" name="linkUrl" id="linkUrl">
+
+    <label for="linkText">URL-Beschriftung</label>
+    <input type="text" name="linkText" id="linkText">
+
+    <label for="display">Projekt anzeigen</label>
+    <select name="display" id="display">
+        <option value="true" selected>Ja</option>
+        <option value="false">Nein</option>
+    </select>
+
+    <div class="buttonflex">
+        <button class="edit-button" name="action" type="submit" value="add">Hinzufügen</button>
+        <a href="#">Zurück</a>
+    </div>
+</div>
