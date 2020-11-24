@@ -58,6 +58,11 @@ hr{
     margin: 0;
 }
 
+.h1{
+
+    margin-left: 10px;
+}
+
 .navbar_logo{
     width: 130px;
     height: auto;
@@ -199,3 +204,71 @@ align-items: center;
 
 
 // end william slider
+
+//other William stuff
+
+.goldbox {
+    display: flex; 
+    flex-direction: column;
+    padding: 0% 15%  0 5%;
+    // max-width: 1800px;
+}
+
+
+.articleDetails{
+    display: flex;
+    flex-direction: row ;
+    // width: 80%;
+    align-items: center;
+    align-content: center;
+}
+
+.purchase {
+    margin-left: 2em;
+    // display: flex; 
+    // flex-wrap: wrap ;
+    font-size: 10px;
+    flex-grow: 4; /* default 0 */
+}
+
+.albumTitle{
+    font-size: 24px;
+    font-weight: bold;  
+}
+
+.description {
+    font-style: italic;
+    font-size: 16px;
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;  
+
+}
+
+.albumImage{
+    padding-left: 10px;
+}
+
+#cdPayPalButton {
+    align-items: right;
+}
+
+.buy{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+.buyDetails{
+    display: flex; 
+    flex-direction: column;
+    font: size 9px;
+
+}
+.warenKorb{
+
+    text-align: right;
+    
+}
