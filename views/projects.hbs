@@ -1,15 +1,23 @@
 <h1>Projekte</h1>
 {{#each project}}
 <div class="goldbox">
-    <img src="{{image}}" alt="{{name}}">
+    <h2>{{name}}</h2>
+    {{#if image}}
+    <img class="project-image" src="{{image}}" alt="{{name}}" style="height:auto; width:500px">
+    {{!-- remove styling here --}}
+    {{/if}}
+
     <div>
         <p>{{description}}</p>
-        {{#if linkUrl}} <a href="{{linkUrl}}">linkText</a>{{/if}}
+        {{#if linkUrl}}
+        <a href="{{linkUrl}}"><bold>{{linkText}}</bold></a>
+        {{/if}}
         <ul>
-            {{#each member}}
+            {{#each members}}
             <li>{{member}}</li>
             {{/each}}
         </ul>
     </div>
 </div>
+
 {{/each}}
