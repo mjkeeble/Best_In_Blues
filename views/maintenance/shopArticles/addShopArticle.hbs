@@ -16,7 +16,7 @@
         <textarea name="description" id="description" cols="30" rows="10"></textarea>
 
         <label for="price">Preis</label>
-        <input type="number" name="price" id="price">
+        <input type="number" name="price" id="price"required>
 
         <label for="promotionText">Werbetext</label>
         <textarea name="promotionText" id="promotionText" cols="30" rows="10"></textarea>
@@ -34,8 +34,14 @@
         </select>
 
         <label for="delivery">Lieferung</label>
-        {{!-- select? --}}
+        <select name="available" id="available">
+            <option value="" ></option>
+            <option value="1-3 Tage" selected >1-3 Tage</option>
+            <option value="1-2 Wochen">1-2 Wochen</option>
+            <option value="2-4 Wochen">2-4 Wochen</option>
+
         <label for="image">Bild (URL)</label>
+        {{!-- update later for cloudinary --}}
         <input type="text" name="delivery" id="delivery">
 
         <label for="spotify">Link zu Spotify</label>
