@@ -75,6 +75,9 @@ app.use('/', maintProject);
 const maintShopArticles = require('./routes/maintShopArticles');
 app.use('/', maintShopArticles);
 
+const maintNavigation = require('./routes/maintNavigation');
+app.use('/', maintNavigation);
+
 // const shop = require('./routes/shop');
 // app.use('/', shop);
 

@@ -25,7 +25,7 @@ const seedNews = [
         "title": "Die neue Webseite ist Live!",
         "image": "",
 
-        "text": "Nach vielen Jahren hat mein Internetpräsenz eine Generalüberholung bekommen.\nHier bekommen Sie wie gewohnt alle wichtige Informationen über meine Aktivitäten und Auftrittstermine. Das Shop ist weiterhin für Ihre Bestellungen geöffnet und jetzt sie es auf dem Smatphone genauso gut aus wie auf dem Rechner - probieren Sie es aus!\n\nVielen Dank an Mark Keeble für die Konzeption und Umsetzung.",
+        "text": "Nach vielen Jahren hat mein Internetpräsenz eine Generalüberholung bekommen.\nHier bekommen Sie wie gewohnt alle wichtige Informationen über meine Aktivitäten und Auftrittstermine. Das Shop ist weiterhin für Ihre Bestellungen geöffnet und jetzt sie es auf dem Smatphone genauso gut aus wie auf dem Rechner - probieren Sie es aus!\n\nVielen Dank an Mark Keeble und William Campell für die Konzeption und Umsetzung.",
     },
 
     {

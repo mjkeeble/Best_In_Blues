@@ -43,7 +43,13 @@ router.get('/gigs', (req, res, next) => {
 });
 
 router.get('/news', (req, res, next) => {
-  res.render('news');
+  console.log(`calling news page`);
+  News.find()
+  .then(news => {
+    res.render('news', { news });
+  })
+  .catch(err =>
+    console.log(`Error while getting articles:`, err));
 });
 
 router.get('/lessons', (req, res, next) => {

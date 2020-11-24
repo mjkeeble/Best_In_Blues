@@ -1,10 +1,18 @@
 <h1>Aktuelles</h1>
-{{!-- {{#each news}}
+{{#each news}}
 <div class="goldbox">
+    {{#if img}}
     <img src="{{image}}" alt="{{title}}">
+    {{/if}}
     <div>
         <h3>{{title}}</h3>
         <p>{{text}}</p>
         <p class="datestamp">Datum: <i>{{updated_at}}</i></p>
     </div>
-</div> --}}
+    {{#if link}}
+    {{#each link}}
+    <a href="{{url}}">{{linkText}}</a>
+    {{/each}}
+    {{/if}}
+</div>
+{{/each}}
