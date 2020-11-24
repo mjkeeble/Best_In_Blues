@@ -29,8 +29,8 @@ router.get('/news', (req, res, next) => {
   res.render('news');
 });
 
-router.get('/classes', (req, res, next) => {
-  res.render('classes');
+router.get('/lessons', (req, res, next) => {
+  res.render('lessons');
 });
 
 router.get('/contact', (req, res, next) => {
