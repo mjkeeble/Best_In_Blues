@@ -92,9 +92,9 @@ nav {
         color: $blue-4;
         margin-left: 2em;
         height: 50px;
-        &:hover {
-              font-weight: 700;
-        }
+        // &:hover {
+        //       font-weight: 700;
+        // }
     }
 }
 
@@ -165,6 +165,12 @@ body{
     justify-content: center;
     align-items: center;
     flex: 1;
+// // click whole image
+//     display: block;
+//     height: 100%;
+//     width: 100%;
+//     text-decoration: none;
+//     // end click whole image
     height: 50vh;
     background-color: red;
     border: 10px solid black;
@@ -172,12 +178,20 @@ body{
     transition-duration: 1s;
     background-position: top;
     background-size: cover;
+    font-family: 'Balsamiq Sans', cursive;
+    color: rgb(129, 129, 129);
+    text-shadow: 2px 2px black;
+    line-height: 1.1;
 }
 .box:hover{
 
-    background-color: blue;
+    // background-color: blue;
+    // all:unset!important;
+    text-decoration: none;
     flex: 4;
 }
+
+
 
 .container{
 display: flex;
