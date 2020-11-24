@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const Admin = require('../models/Admin');
 
 
-//router.get('/admin/delete/:id', (req, res) => {
+//router.get('/admin/delete/:id', loginCheck(), (req, res, next) => {
     //delete an admin
 // });
 
