@@ -210,7 +210,9 @@ align-items: center;
 .goldbox {
     display: flex; 
     flex-direction: column;
+    background-color: $gold-2;
     padding: 0% 15%  0 5%;
+    margin: 2em;
     // max-width: 1800px;
 }
 
