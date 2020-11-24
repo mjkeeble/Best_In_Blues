@@ -13,8 +13,8 @@ router.get('/', (req, res, next) => {
 
 router.get('/shop', (req, res, next) => {
   console.log(`calling shop`);
-  ShopArticle.find()
-    .then(article => {
+  ShopArticle.find().sort({year: 'desc'})
+    .then(article => {              
       res.render('shop/shopArticles', { article: article });
     })
     .catch(err =>
