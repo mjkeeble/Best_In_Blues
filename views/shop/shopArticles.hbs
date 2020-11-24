@@ -1,6 +1,8 @@
 <h1>Shop</h1>
 
 
+
+{{!-- 
 {{#each article}}
 
 <div class="goldbox">
@@ -18,4 +20,55 @@
 </div>
 {{/each}}
 <p id="versandkosten">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
+ --}}
+
+
+{{!-- put this between Each and end each --}}
+
+<div class="goldbox">
+<div class="warenKorb">
+<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+    <input type="hidden" name="cmd" value="_s-xclick">
+    <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+    <input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_viewcart_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+    </form>
+    </div>
+{{!-- <form action="/addArticle/{{_id}}" method="get"></form> --}}
+<div class="articleDetails">
+    <div><img class="albumImage" src="https://image.jimcdn.com/app/cms/image/transf/dimension=150x150:mode=crop:format=png/path/se8a40333f3abacbd/image/i4e7297302814f7da/version/1394990845/image.png" alt="Ginger Blues unknowable journey"></div>
+    <div class="purchase">
+        <div class="albumTitle">Album Title</div>
+        <div class="description">Die neue CD des Berliner Quartetts um die charismatische Sängerin Jessie Gordon aus Australien. Nominiert für den deutschen Schallplattenpreis!
+            <div class="buy">
+                <div id="cdPayPalButton">
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="MZWH974DDDLN8">
+                    <input type="image" src="https://www.paypalobjects.com/de_DE/DE/i/btn/btn_cart_LG.gif" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>        
+                </div>
+                <div class="buyDetails">
+                    <div>Verfügbar: Ja</div>
+                    <div>Lieferzeit:2 Tage</div>
+                </div>
+            </div>
+        </div>
+        <div class="price">€18.00*</div>
+    </div>
+
+
+</div>
+
+
+<p> </p>
+    
+<p id="warenKorb">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
+
+
+
+    </div>
+
+
 
