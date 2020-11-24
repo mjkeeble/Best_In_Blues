@@ -8,14 +8,7 @@ const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
 
 
-router.get('/webmaster', (req, res, next) => {
-    res.render('maintenance/adminLogin');
-});
 
-router.get('/logout', (req, res, next)=>{
-    // terminate session
-    res.redirect('/webmaster')
-})
 
 router.get('/adminMenu', (req, res, next) => {
     console.log(`calling adminMenu`);
