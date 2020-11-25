@@ -16,26 +16,31 @@ router.post('/login', (req, res, next) => {
         .then(found => {
             if (found === null) {
                 res.render('maintenance/adminLogin', { message: 'Invalid credentials' })
+                return;
             }
             // check password
             if (bcrypt.compareSync(password, found.password)) {
                 req.session.user = found;
                 res.redirect('/adminMenu');
+                return;
             } else {
                 res.render('maintenance/adminLogin', { message: 'Invalid credentials' })
+                return;
             }
         })
 });
 
-router.post('/createAdmin', (req, res, next) => {
+router.post('/admin/add', (req, res, next) => {
     const { adminName, password, password2 } = req.body;
     // check pasword length
     if (password.length < 8) {
         res.render('maintenance/admins/addAdmin', { message: 'Passwort muss mindestens 8 Zeichen enthalten' });
+        return;
     }
     //  check if both versions of teh password are the same
         if (password !== password2){
-        res.render('maintenance/admins/addAdmin', { message: 'Die engegebenen Passwörter sind nicht gleich' });
+        res.render('maintenance/admins/addAdmin', { message: 'Die eingegebenen Passwörter sind nicht gleich. Bitte noch mal versuchen' });
+        return;
     }
     // check if user already exists
     Admin.findOne({ adminName: adminName })
@@ -48,6 +53,7 @@ router.post('/createAdmin', (req, res, next) => {
                 console.log(salt);
                 const hash = bcrypt.hashSync(password, salt);
                 Admin.create({ adminName: adminName, password: hash })
+                res.render('maintenance/adminMenu')
             };
         })
         .catch(err => {
@@ -64,5 +70,7 @@ router.get('/logout', (req, res, next) => {
         }
     })
 });
+
+
 
 module.exports = router;
