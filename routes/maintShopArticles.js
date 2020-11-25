@@ -5,9 +5,17 @@ const router = express.Router();
 const Admin = require('../models/Admin');
 const shopArticle = require('../models/ShopArticle');
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user){
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+  }
 
-
-router.get('/shopArticle/:id/delete', (req, res) => {
+router.get('/shopArticle/:id/delete', loginCheck(), (req, res) => {
     console.log(`delete shop article`);
     console.log(req.body);
 
@@ -26,7 +34,7 @@ router.get('/shopArticle/:id/delete', (req, res) => {
 });
 
 //=============================================
-router.get('/shopArticle/:id/edit?', (req, res) => {
+router.get('/shopArticle/:id/edit?', loginCheck(), (req, res) => {
     console.log(`open edit shop article form`);
     console.log(req.params.id);
 
@@ -68,7 +76,7 @@ router.post('/shopArticle/:id/edit', (req, res) => {
 });
 
 //=============================================
-router.get('/shopArticle/add/', (req, res) => {
+router.get('/shopArticle/add/', loginCheck(), (req, res) => {
     console.log(`open add article form`);
     res.render("maintenance/shopArticles/editShopArticle");
 })
@@ -100,6 +108,5 @@ router.post('/shopArticle/add/', (req, res) => {
             console.log(err)
         })
 });
-
 
 module.exports = router;

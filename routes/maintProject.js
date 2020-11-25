@@ -5,6 +5,15 @@ const router  = express.Router();
 const Admin = require('../models/Admin');
 const Project = require('../models/Project');
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user){
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+  }
 
 //router.get('/project/delete/:id', (req, res) => {
     //delete an/project

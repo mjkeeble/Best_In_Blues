@@ -4,6 +4,16 @@ const bcrypt = require('bcrypt');
 const Admin = require('../models/Admin'); 
 
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user){
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+  }
+
 router.get('/webmaster', (req, res, next) => {
     res.render('maintenance/adminLogin');
 });
