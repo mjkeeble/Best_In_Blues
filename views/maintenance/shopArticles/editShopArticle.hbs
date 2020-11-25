@@ -1,28 +1,28 @@
-<h1>Shopartikel bearbeiten</h1>
+<h1>Shopartikel {{#if status}}bearbeiten{{else}} hinzufügen{{/if}}</h1>
 
 <div class="goldbox">
     <form action="#" method="post">
         <label for="artist">Projekt</label>
-        <input type="text" name="artist" id="artist" value="artist" required>
+        <input type="text" name="artist" id="artist" {{#if status}}value="{{article.artist}}"{{/if}} required>
 
         <label for="title">Titel</label>
-        <input type="text" name="title" id="title" value="title" required>
+        <input type="text" name="title" id="title" {{#if status}}value="{{article.title}}"{{/if}} required>
 
         <label for="year">Jahr</label>
         {{!-- insert current year as default value --}}
-        <input type="number" name="year" id="year" value="year">
+        <input type="number" name="year" id="year" {{#if status}}value="{{article.year}}"{{/if}}>
 
         <label for="description">Beschreibung</label>
-        <textarea name="description" id="description" cols="30" rows="10" value="description"></textarea>
+        <textarea name="description" id="description" cols="30" rows="10" {{#if status}}value="{{article.description}}"{{/if}}></textarea>
 
         <label for="price">Preis</label>
-        <input type="number" name="price" id="price" value="price" required>
+        <input type="number" name="price" id="price" {{#if status}}value="{{article.price}}"{{/if}} required>
 
         <label for="promotionText">Werbetext</label>
-        <textarea name="promotionText" id="promotionText" cols="30" rows="10" value="promotionText"></textarea>
+        <textarea name="promotionText" id="promotionText" cols="30" rows="10" {{#if status}}value="{{article.promotionText}}"{{/if}}></textarea>
 
         <label for="promotionImage">Werbebild (URL)</label>
-        <input type="text" name="promotionImage" id="promotionImage" value="promotionImage">
+        <input type="text" name="promotionImage" id="promotionImage" {{#if status}}value="{{article.promotionImage}}"{{/if}}>
 
         <label for="endorsements">Rezensionen</label>
         {{!-- how? --}}
@@ -44,17 +44,18 @@
 
         <label for="image">Bild (URL)</label>
         {{!-- update later for cloudinary --}}
-        <input type="text" name="delivery" id="delivery" value="image">
+        <input type="text" name="delivery" id="delivery" {{#if status}}value="{{article.image}}"{{/if}}>
 
         <label for="spotify">Link zu Spotify</label>
-        <input type="text" name="spotify" id="spotify" value="spotify">
+        <input type="text" name="spotify" id="spotify" {{#if status}}value="{{article.spotify}}"{{/if}}>
 
         <label for="shoppingcart">Link zu Paypal</label>
         <input type="text" name="shoppingcart" id="shoppingcart" required>
 
         <div class="buttonflex">
-            <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
-            <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
+            {{#if status}}<button class="edit-button" type="submit" formaction="/shopArticle/{{_id}}/edit">Änderungen speichern</button>{{else}}
+            <button class="edit-button"type="submit" formaction="/shopArticle/{{_id}}/add">Löschen</button>
+            {{/if}}
             <a href="#">Zurück</a>
         </div>
     </form>
