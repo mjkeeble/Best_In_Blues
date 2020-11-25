@@ -11,22 +11,23 @@ router.get('/shopArticle/:id/delete', (req, res) => {
     console.log(`delete shop article`);
     console.log(req.body);
 
-    let r = window.confirm(`Sie sind gerade dabei \n${req.body.artist} - ${req.body.title} zu löschen.\n Clicken Sie OK zu bestätigen.`)
-    if (r) {
-    shopArticle.findByIdAndRemove({ _id: req.params.id })
-        .then(() => {
-            window.alert("Artikel wurde gelöscht")
-            res.redirect('/maintainShopList')
-        })
-        .catch(err => {
-            console.log(err);
-        })
-    }
+    // let r = window.confirm(`Sie sind gerade dabei \n${req.body.artist} - ${req.body.title} zu löschen.\n Clicken Sie OK zu bestätigen.`)
+    // if (r) {
+        shopArticle.findByIdAndRemove({ _id: req.params.id })
+            .then(() => {
+                // window.alert("Artikel wurde gelöscht")
+                res.redirect('/maintainShopList')
+            })
+            .catch(err => {
+                console.log(err);
+            })
+    // }
 
 });
 
+//=============================================
 router.get('/shopArticle/:id/edit?', (req, res) => {
-    console.log(`shop edit called`);
+    console.log(`open edit shop article form`);
     console.log(req.params.id);
 
     shopArticle.findById(req.params.id)
@@ -39,20 +40,66 @@ router.get('/shopArticle/:id/edit?', (req, res) => {
         });
 });
 
-//router.post('/shopArticle/edit/:id', (req, res) => {
-//update/shopArticle based on edit form
-// });
+//=============================================
+router.post('/shopArticle/:id/edit', (req, res) => {
+    console.log(`post article edit`);
+    console.log(req.body);
+    const { artist, title, year, description, price, promotionText, promotionImage, image, available, delivery, spotify, shoppingcart } = req.body;
+    shopArticle.findByIdAndUpdate(req.params.id, {
+        artist: artist,
+        title: title,
+        year: year,
+        description: description,
+        price: price,
+        promotionText: promotionText,
+        promotionImage: promotionImage,
+        image:image,
+        available: available,
+        delivery: delivery,
+        spotify: spotify,
+        shoppingcart: shoppingcart
+    })
+        .then(() => {
+            res.redirect("/maintainShopList")
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
 
+//=============================================
 router.get('/shopArticle/add/', (req, res) => {
     console.log(`open add article form`);
-    console.log(req.params);
     res.render("maintenance/shopArticles/editShopArticle");
 })
 
-//router.post('/shopArticle/add/', (req, res) => {
-//create new/shopArticle based on form
-// });
-
+//=============================================
+router.post('/shopArticle/add/', (req, res) => {
+    console.log(`add article from form`);
+    const { artist, title, year, description, price, promotionText, promotionImage, image, available, delivery, spotify, shoppingcart } = req.body;
+    shopArticle.create({
+        artist: artist,
+        title: title,
+        year: year,
+        description: description,
+        price: price,
+        promotionText: promotionText,
+        promotionImage: promotionImage,
+        image: image,
+        available: available,
+        delivery: delivery,
+        spotify: spotify,
+        shoppingcart: shoppingcart
+    })
+        .then(article => {
+            console.log(`${article.title} added`);
+            res.redirect("/maintainShopList")
+        })
+        .catch(err => {
+            res.redirect("/maintainShopList")
+            console.log(err)
+        })
+});
 
 
 module.exports = router;
