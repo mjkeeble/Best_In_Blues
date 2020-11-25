@@ -1,13 +1,14 @@
 <h1>Shopartikel</h1>
-<a href="#">Menü</a>
+<a href="/adminMenu">Menü</a>
 
 {{#each shopArticle}}
-<div class="goldbox">
+
+<form action="/shopArticle/" method="get" class="goldbox">
     <p>Artikel: {{artist}} - {{title}}</p>
 
     <div class="buttonflex">
-        <a href="#">Bearbeiten</a>
-        <a href="#">Löschen</a>
+        <button type="submit" formaction="/shopArticle/{{_id}}/edit">Bearbeiten</button>
+        <button type="submit" formaction="/shopArticle/{{_id}}/delete">Löschen</button>
     </div>
-</div>
+</form>
 {{/each}}

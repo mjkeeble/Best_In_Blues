@@ -66,11 +66,13 @@ router.get('/lessons', (req, res, next) => {
   res.render('lessons');
 });
 
+
 // router.get('/contact', loginCheck(), (req, res, next) => {
 //   res.render('contact');
 // });
 
 router.get('/contact',  (req, res, next) => {
+
   res.render('contact');
 });
 
