@@ -7,19 +7,28 @@ const News = require('../models/News');
 const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user){
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+  }
+  
 
 
-
-router.get('/adminMenu', (req, res, next) => {
+router.get('/adminMenu', loginCheck(),  (req, res, next) => {
     console.log(`calling adminMenu`);
     res.render('maintenance/adminMenu');
 });
 
-router.get('/maintainAdminsAdd', (req, res, next) => {
+router.get('/maintainAdminsAdd',  loginCheck(),  (req, res, next) => {
 res.render(`maintenance/admins/addAdmin`)
 });
 
-router.get('/maintainAdminsList', (req, res, next) => {
+router.get('/maintainAdminsList',  loginCheck(),  (req, res, next) => {
 console.log(`calling admin list`);
 Admin.find().sort({adminName: 'asc'})
 .then(admin => {
@@ -29,11 +38,11 @@ Admin.find().sort({adminName: 'asc'})
     console.log(`Error while getting admins:`, err));
 });
 
-router.get('/maintainNewsAdd', (req, res, next) => {
+router.get('/maintainNewsAdd',  loginCheck(),  (req, res, next) => {
 res.render(`maintenance/news/addNews`)
 });
 
-router.get('/maintainNewsList', (req, res, next) => {
+router.get('/maintainNewsList',  loginCheck(),  (req, res, next) => {
     console.log(`calling news list`);
     News.find().sort({updated_at: 'desc'})
     .then(news => {
@@ -43,11 +52,11 @@ router.get('/maintainNewsList', (req, res, next) => {
         console.log(`Error while getting admins:`, err));
 });
 
-router.get('/maintainGigsAdd', (req, res, next) => {
+router.get('/maintainGigsAdd',  loginCheck(),  (req, res, next) => {
 res.render(`maintenance/gigs/addGig`)
 });
 
-router.get('/maintainGigsList', (req, res, next) => {
+router.get('/maintainGigsList',  loginCheck(),  (req, res, next) => {
     console.log(`calling gig list`);
     Gig.find().sort({date: 'desc'})
     .then(gig => {
@@ -57,11 +66,11 @@ router.get('/maintainGigsList', (req, res, next) => {
         console.log(`Error while getting gigs:`, err));
 });
 
-router.get('/maintianProjectsAdd', (req, res, next) => {
+router.get('/maintianProjectsAdd', loginCheck(),  (req, res, next) => {
 res.render(`maintenance/projects/addProject`)
 });
 
-router.get('/maintainProjectsList', (req, res, next) => {
+router.get('/maintainProjectsList',  loginCheck(), (req, res, next) => {
     console.log(`calling project list`);
     Project.find().sort({name: 'asc'})
     .then(project => {
@@ -71,11 +80,11 @@ router.get('/maintainProjectsList', (req, res, next) => {
         console.log(`Error while getting projects:`, err));
 });
 
-router.get('/maintainShopAdd', (req, res, next) => {
+router.get('/maintainShopAdd',  loginCheck(),  (req, res, next) => {
 res.render(`maintenance/shopArticles/addShopArticle`)
 });
 
-router.get('/maintainShopList', (req, res, next) => {
+router.get('/maintainShopList',  loginCheck(), (req, res, next) => {
     console.log(`calling shop article list`);
     ShopArticle.find().sort({year: 'desc'})
     .then(shopArticle => {

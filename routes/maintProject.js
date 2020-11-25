@@ -22,10 +22,16 @@ const Project = require('../models/Project');
     //open/project add form
 // });
 
-//router.post('/project/add/', (req, res) => {
-    //create new/project based on form
-// });
 
+router.post('/maintianProjectsAdd', (req, res, next) => {
+    console.log(`calling project add`) // not sure what to do here with the array
+    const { name, members, description, image, linkUrl, linkText, display} = req.body;
+    Project.create({ name: name, description: description, image: image, display: display}).then(() =>{
+        // res.render('news')})
+        res.redirect('/projects')
+    });
+});
+        
 
 
 module.exports = router;
