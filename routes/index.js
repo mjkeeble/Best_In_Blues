@@ -6,6 +6,16 @@ const News = require('../models/News');
 const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
 
+const loginCheck = () => {
+  return (req, res, next) => {
+      if (req.session.user){
+          next();
+      } else {
+          res.redirect('/webmaster')
+      }
+  }
+}
+
 /* GET home page */
 router.get('/', (req, res, next) => {
   res.render('index');
@@ -56,7 +66,7 @@ router.get('/lessons', (req, res, next) => {
   res.render('lessons');
 });
 
-router.get('/contact', (req, res, next) => {
+router.get('/contact', loginCheck(), (req, res, next) => {
   res.render('contact');
 });
 
