@@ -58,8 +58,8 @@ hr{
     margin: 0;
 }
 
-.h1{
-
+h1{
+    font-family: 'Rock Salt',  cursive;
     margin-left: 10px;
 }
 
@@ -151,12 +151,12 @@ Extra large (xl) devices (large desktops, 1200 px and up)
 */
 
 
-// William slider
+// William slider 
 
 body{
     margin: 0;
     padding: 0;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Proza Libre','Roboto', sans-serif;
 }
 
 .box{
@@ -171,14 +171,14 @@ body{
 //     text-decoration: none;
 //     // end click whole image
     height: 50vh;
-    background-color: red;
+    background-color: black;
     border: 10px solid black;
-    font-size: 50px;
+    font-size: 30px;
     transition-duration: 1s;
-    background-position:center;
+    background-position: top center; // keep this otherwise it zooms on the centre of photos, not face
     background-size: cover;
-    font-family: 'Balsamiq Sans', cursive;
-    color: rgb(129, 129, 129);
+    font-family: 'Rock Salt',  cursive;
+    color: rgb(83, 169, 240);
     text-shadow: 2px 2px black;
     line-height: 1.1;
     

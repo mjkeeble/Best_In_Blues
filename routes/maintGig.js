@@ -23,8 +23,22 @@ const Gig = require('../models/Gig');
 // });
 
 //router.post('/gig/add/', (req, res) => {
-    //create new gig based on form
+    //create new gig based on form 
 // });
+
+
+
+router.post('/maintainGigsAdd', (req, res, next) => {
+    //create new/news based on form
+    const { date, enddate, town, venue, status, comment } = req.body;
+    // console.log("got this title" , title);
+    Gig.create({ date: date, enddate: enddate, town: town, venue: venue, status: status, comment: comment }).then(() =>{
+        // res.render('news')})
+        res.redirect('/gigs')
+    });
+});
+        
+
 
 
 

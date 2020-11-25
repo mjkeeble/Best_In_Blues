@@ -1,7 +1,7 @@
 // ROUTES TO MANAGE GIG RECORDS
 
 const express = require('express');
-const router  = express.Router();
+const router  = express.Router(); 
 const Admin = require('../models/Admin');
 const News = require('../models/News');
 
@@ -22,13 +22,15 @@ const News = require('../models/News');
     //open/news add form
 // });
 
-//router.post('/news/add/', (req, res) => {
+router.post('/maintainNewsAdd', (req, res, next) => {
     //create new/news based on form
-// });
-
-
-
-module.exports = router;
-
+    const { title, text, image, url, linktext,} = req.body;
+    // console.log("got this title" , title);
+    News.create({ title: title, text: text, image: image, link:[{url: url, linktext: linktext}]  }).then(() =>{
+        // res.render('news')})
+        res.redirect('/news')
+    });
+});
+        
 
 module.exports = router;
