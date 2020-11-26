@@ -5,6 +5,7 @@ const Gig = require('../models/Gig');
 const News = require('../models/News');
 const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
+var moment = require('moment'); // require
 
 const loginCheck = () => {
   return (req, res, next) => {
@@ -42,10 +43,29 @@ router.get('/projects', (req, res, next) => {
 });
 
 router.get('/gigs', (req, res, next) => {
-  console.log(`calling gigs page`);
+  console.log(`****  calling gigs page`);
   let today = new Date()
   Gig.find({date: {$gte: (today) } } )
   .then(gig =>{
+    // console.log(gig)
+    // let gigDate = new Date(gig.date);
+    // console.log(gigDate.toDateString())
+    // map function
+
+    
+    // let newArray  =  gig.map((gig)=> {
+    //   console.log(typeof gig.date)
+    //   if (gig.date) gig.date = moment(gig.date).format('D MMMM YYYY') // event.date.toISOString()
+    // })
+// console.log(newArray);
+    // gig.forEach(event => {
+    //   if (event.date) event.date = moment(event.date).format('D MMMM YYYY') // event.date.toISOString()
+    // })
+    
+    // console.log("Gig date fixed, hopefully ", gig)
+    // console.log("Test date fixed, hopefully ", moment('2021-02-19T00:00:00.000+00:00').format('D MMMM YYYY'))
+
+    // end map
   res.render('gigs', { gig });
   })
   .catch(err =>
@@ -74,6 +94,23 @@ router.get('/lessons', (req, res, next) => {
 router.get('/contact',  (req, res, next) => {
 
   res.render('contact');
+});
+
+
+router.post('/contact', (req, res, next) => {
+ 
+
+  Email.send({ // Trying email sender - William
+    SecureToken : "50684a98-6b54-4631-9d4d-4f12437dd8b1",
+    To : 'me@williamcmapbell.ie',
+    From : "hirte@website.test",
+    Subject : "This is the subject",
+    Body : "And this is the body"
+  }).then(
+    message => alert("the message has been sent")
+    );
+    
+    
 });
 
 module.exports = router;
