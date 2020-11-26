@@ -1,24 +1,24 @@
-{{project}}
-<h1>{{name}}</h1>h1>
+<h1>Projekt {{#if status}}bearbeiten {{else}}hinzufügen{{/if}}</h1>
 
-<div class="goldb">
+<form action="" method="post" class="goldbox">
     <label for="name">Projektname</label>
-    <input type="text" name="name" id="name" value="{{name}}" required>
+    <input type="text" name="name" id="name" {{#if status}}value="{{project.name}}" {{/if}}required>
 
-    <label for="members">Mitglieder</label>
+    {{!-- <label for="members">Mitglieder</label> --}}
     {{!-- how to input?manage multiple members --}}
 
     <label for="description">Beschreibung</label>
-    <textarea name="description" id="description" width="100%" rows="10" value="{{description}}"></textarea>
+    <textarea name="description" id="description" width="100%" rows="5" {{#if status}}value="{{project.description}}"
+        {{/if}}></textarea>
 
     <label for="image">Bild (url)</label>
-    <input type="text" name="image" id="image" value="{{image}}">
+    <input type="text" name="image" id="image" {{#if status}}value="{{project.image}}" {{/if}}>
 
     <label for="linkUrl">URL</label>
-    <input type="text" name="linkUrl" id="linkUrl" value="linkUrl">
+    <input type="text" name="linkUrl" id="linkUrl" {{#if status}}value="{{project.linkUrl}}" {{/if}}>
 
     <label for="linkText">URL-Beschriftung</label>
-    <input type="text" name="linkText" id="linkText" value="linkText">
+    <input type="text" name="linkText" id="linkText" {{#if status}}value="{{project.linkText}}" {{/if}}>
 
     <label for="display">Projekt anzeigen</label>
     <select name="display" id="display">
@@ -27,8 +27,9 @@
     </select>
 
     <div class="buttonflex">
-        <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
-        <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
-        <a href="#">Zurück</a>
+        {{#if status}}<button class="edit-button" type="submit" formaction="/project/{{project._id}}/edit">Änderungen
+            speichern</button>{{else}}
+        <button class="add-button" type="submit" formaction="/project/add">Hinzufügen</button>{{/if}}
+        <a href="/maintainProjectsList">Zurück</a>
     </div>
-</div>
+</form>

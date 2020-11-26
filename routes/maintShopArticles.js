@@ -49,7 +49,7 @@ router.get('/shopArticle/:id/edit?', loginCheck(), (req, res) => {
 });
 
 //=============================================
-router.post('/shopArticle/:id/edit', (req, res) => {
+router.post('/shopArticle/:id/edit',  (req, res) => {
     console.log(`post article edit`);
     console.log(req.body);
     const { artist, title, year, description, price, promotionText, promotionImage, image, available, delivery, spotify, shoppingcart } = req.body;

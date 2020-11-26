@@ -178,7 +178,7 @@ body{
     background-position: top center; // keep this otherwise it zooms on the centre of photos, not face
     background-size: cover;
     font-family: 'Rock Salt',  cursive;
-    color: rgb(83, 169, 240);
+    color: $brown-1;
     text-shadow: 2px 2px black;
     line-height: 1.1;
     
@@ -200,21 +200,20 @@ align-items: center;
 
 }
 
-.box:nth-of-type(1){
-    background-image: url("https://www.bluescamp.de/wp-content/uploads/2015/02/Jan-Hirte-Dozent.jpg");
-}
-.box:nth-of-type(2){
-    background-image: url("https://i.ytimg.com/vi/a39YpP3T3-8/maxresdefault.jpg");
-}
-.box:nth-of-type(3){
-    background-image: url("https://fotos.verwaltungsportal.de/seitengenerator/gross/blue_ribbon_2015.jpeg");
-}
-.box:nth-of-type(4){
-    background-image: url("https://a1-images.myspacecdn.com/images03/2/004c7f609bf0490aaac97f251601983e/600x600.jpg");
-}
-.box:nth-of-type(5){
-    background-image: url("https://www.blueslover.de/albums/Jazzclub%20Bielefeld%20Kat%20%20Baloun/normal_9N1A5223.jpg");
-}
+.box:nth-of-type(1) {
+    background-image: url("https://res.cloudinary.com/markjkeeble/image/upload/v1606143966/janhirte/ja_bw_JuergenAchten_cyv0ob.jpg"); }
+  
+  .box:nth-of-type(2) {
+    background-image: url("https://res.cloudinary.com/markjkeeble/image/upload/v1606143973/janhirte/Jan_Buehne_Blau2_afgbz8.jpg"); }
+  
+  .box:nth-of-type(3) {
+    background-image: url("https://res.cloudinary.com/markjkeeble/image/upload/v1606143963/janhirte/kings_portrait_Uwe_Arens_cv1hqg.jpg"); }
+  
+  .box:nth-of-type(4) {
+    background-image: url("https://res.cloudinary.com/markjkeeble/image/upload/v1606143962/janhirte/unknowable_journey_tateqf.jpg"); }
+  
+  .box:nth-of-type(5) {
+    background-image: url("https://res.cloudinary.com/markjkeeble/image/upload/v1606143964/janhirte/jan_stage_red_gykw5g.jpg"); }
 
 
 // end william slider
@@ -226,8 +225,8 @@ align-items: center;
     flex-direction: column;
     background-color: $gold-2;
     padding: 0% 15%  0 5%;
-    margin: 4em;
-    padding: 2em;
+    margin: 2em;
+    padding: 1em;
     filter: drop-shadow(1em 1em 0.75em $blue-3)
     // max-width: 1800px;
 }

@@ -1,13 +1,13 @@
 <h1>Termine</h1>
-<a href="#">Menü</a>
+<a href="/adminMenu">Menü</a>
 
 {{#each gig}}
-<div class="goldbox">
+<form action="#" method="get"  class="goldbox">
     <p>Datum: {{date}}</p>
     <p>{{venue}}, {{town}}</p>
     <div class="buttonflex">
-        <a href="#">Bearbeiten</a>
-        <a href="#">Löschen</a>
+        <button type="submit" formaction="/gig/{{_id}}/edit">Bearbeiten</button>
+        <button type="submit" formaction="/gig/{{_id}}/delete">Löschen</button>
     </div>
-</div>
+</form>
 {{/each}}

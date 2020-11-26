@@ -1,7 +1,6 @@
 <h1>Shopartikel {{#if status}}bearbeiten{{else}} hinzufügen{{/if}}</h1>
 
-<div class="goldbox">
-    <form action="#" method="post">
+    <form action="#" method="post" class="goldbox">
         <label for="artist">Projekt</label>
         <input type="text" name="artist" id="artist" {{#if status}}value="{{article.artist}}" {{/if}} required>
 
@@ -63,4 +62,3 @@
             <a href="/maintainShopList">Zurück</a>
         </div>
     </form>
-</div>
