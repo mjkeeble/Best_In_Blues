@@ -2,8 +2,14 @@
 <a href="#">Menü</a>
 
 {{#each project}}
-<div class="goldbox">
+<div class="goldbox-h">
     <p>Projektname: {{name}}</p>
+
+    <div class="buttonflex">
+        <button type="submit" formaction="/news/{{_id}}/edit">Bearbeiten</button>
+        <button type="submit" formaction="/news/{{_id}}/delete">Löschen</button>
+    </div>
+    </form>
 
     <div class="buttonflex">
         <a href="/project/{{_id}}/edit">Bearbeiten</a>

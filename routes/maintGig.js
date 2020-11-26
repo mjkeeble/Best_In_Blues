@@ -6,7 +6,17 @@ const Admin = require('../models/Admin');
 const Gig = require('../models/Gig');
 
 
-router.get('/gig/:id/delete', (req, res) => {
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user) {
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+}
+
+router.get('/gig/:id/delete', loginCheck(), (req, res) => {
     console.log(`delete gig`);
     Gig.findByIdAndRemove({ _id: req.params.id })
         .then(() => {
@@ -17,7 +27,7 @@ router.get('/gig/:id/delete', (req, res) => {
         })
 });
 
-router.get('/gig/:id/edit', (req, res) => {
+router.get('/gig/:id/edit', loginCheck(), (req, res) => {
     console.log(`open gig edit form`);
     Gig.findById(req.params.id)
         .then(gig => {
@@ -49,7 +59,7 @@ router.post('/gig/:id/edit', (req, res) => {
         })
 });
 
-router.get('/maintainGigsAdd', (req, res) => {
+router.get('/maintainGigsAdd', loginCheck(), (req, res) => {
     console.log(`open gig add form`);
     res.render("maintenance/gigs/editGig")
 });
@@ -74,7 +84,7 @@ router.post('/gig/add/', (req, res) => {
         })
 });
 
-router.post('/maintainGigsAdd',  (req, res, next) => {
+router.post('/maintainGigsAdd', (req, res, next) => {
     //create new/news based on form
     const { date, enddate, town, venue, status, comment } = req.body;
     // console.log("got this title" , title);
