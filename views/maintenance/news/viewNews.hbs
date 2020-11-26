@@ -1,13 +1,15 @@
 <h1>Aktuelles</h1>
-<a href="#">Menü</a>
+<a href="/adminMenu">Menü</a>
 
 {{#each news}}
-<div class="goldbox">
-    <p>Titel: {{title}}</p>
-    <p>Datum: {{updated_at}}</p>
-    <div class="buttonflex">
-        <a href="#">Bearbeiten</a>
-        <a href="#">Löschen</a>
-    </div>
+<form  action="#" method="get"  class="goldbox-h">
+<div  style="width: 1000px">
+    <h3>{{title}}</h3>
+    <p>{{updated_at}}</p>
 </div>
+    <div class="buttonflex">
+        <button type="submit" formaction="/news/{{_id}}/edit">Bearbeiten</button>
+        <button type="submit" formaction="/news/{{_id}}/delete">Löschen</button>
+    </div>
+    </form>
 {{/each}}

@@ -5,14 +5,15 @@ const Gig = require('../models/Gig');
 const News = require('../models/News');
 const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
+const moment = require('moment');
 
 const loginCheck = () => {
   return (req, res, next) => {
-      if (req.session.user){
-          next();
-      } else {
-          res.redirect('/webmaster')
-      }
+    if (req.session.user) {
+      next();
+    } else {
+      res.redirect('/webmaster')
+    }
   }
 }
 
@@ -23,8 +24,8 @@ router.get('/', (req, res, next) => {
 
 router.get('/shop', (req, res, next) => {
   console.log(`calling shop`);
-  ShopArticle.find().sort({year: 'desc'})
-    .then(article => {              
+  ShopArticle.find().sort({ year: 'desc' })
+    .then(article => {
       res.render('shop/shopArticles', { article: article });
     })
     .catch(err =>
@@ -32,7 +33,7 @@ router.get('/shop', (req, res, next) => {
 });
 
 router.get('/projects', (req, res, next) => {
-  Project.find({display: true}).sort({name: 1})
+  Project.find({ display: true }).sort({ name: 1 })
     .then(project => {
       console.log(Project);
       res.render('projects', { project });
@@ -44,22 +45,28 @@ router.get('/projects', (req, res, next) => {
 router.get('/gigs', (req, res, next) => {
   console.log(`calling gigs page`);
   let today = new Date()
-  Gig.find({date: {$gte: (today) } } )
-  .then(gig =>{
-  res.render('gigs', { gig });
-  })
-  .catch(err =>
-    console.log(`Error while getting gigs:`, err));
+  Gig.find({ date: { $gte: (today) } })
+    .then(gig => {
+      console.log(gig);
+      gig.forEach(event => {
+        if (event.date) event.place = moment(event.date).format("YYYY-MM-DD")
+      })
+console.log(gig);
+
+      res.render('gigs', { gig });
+    })
+    .catch(err =>
+      console.log(`Error while getting gigs:`, err));
 });
 
 router.get('/news', (req, res, next) => {
   console.log(`calling news page`);
-  News.find()
-  .then(news => {
-    res.render('news', { news });
-  })
-  .catch(err =>
-    console.log(`Error while getting articles:`, err));
+  News.find().sort({updated_at: 'desc'})
+    .then(news => {
+      res.render('news', { news });
+    })
+    .catch(err =>
+      console.log(`Error while getting articles:`, err));
 });
 
 router.get('/lessons', (req, res, next) => {
@@ -71,7 +78,7 @@ router.get('/lessons', (req, res, next) => {
 //   res.render('contact');
 // });
 
-router.get('/contact',  (req, res, next) => {
+router.get('/contact', (req, res, next) => {
 
   res.render('contact');
 });

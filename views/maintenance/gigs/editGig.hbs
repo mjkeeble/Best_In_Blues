@@ -24,7 +24,7 @@
     </select>
 
     <label for="comment">Weitere Infromationen</label>
-    <textarea name="comment" id="comment" cols="30" rows="5" {{#if status}}value="{{gig.comment}}" {{/if}}></textarea>
+    <textarea name="comment" id="comment" cols="30" rows="5" >{{#if status}}value="{{gig.comment}}" {{/if}}</textarea>
 
     <div class="buttonflex">
         {{#if status}}<button class="edit-button" type="submit" formaction="/gig/{{gig._id}}/edit">Änderungen
