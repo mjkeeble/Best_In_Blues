@@ -1,36 +1,36 @@
-<h1>Termin bearbeiten</h1>
-<div class="goldbox">
-    {{gig}}
-    <form action="" method="post">
-        <label for="date">Datum</label>
-        <input type="date" name="date" id="date" value="{{date}}" required>
+<h1>Termin {{#if status}}bearbeiten{{else}}hinzufügen{{/if}}</h1>
 
-        <label for="enddate">bis (falls mehrtägig)</label>
-        <input type="date" name="enddate" id="enddate" value="{{enddate}}">
+<form action="" method="post" class="goldbox">
+    <label for="date">Datum</label>
+    <input type="date" class="form_datetime" name="date" id="date" {{#if status}} value="{{gig.date}}" {{/if}} required>
+    <p>{{gig.date}}</p>
 
-        <label for="town">Stadt</label>
-        <input type="text" name="town" id="town" value="{{town}}">
+    <label for="enddate">bis (falls mehrtägig)</label>
+    <input type="date" name="enddate" id="enddate" {{#if status}}value="{{gig.enddate}}" {{/if}}>
 
-        <label for="venue">Veranstaltungsort</label>
-        <input type="text" name="venue" id="venue" value="venue" required>
+    <label for="town">Stadt</label>
+    <input type="text" name="town" id="town" {{#if status}}value="{{gig.town}}" {{/if}}>
 
-        <label for="status">Status</label>
-        <select name="status" id="status">
-            {{!-- Need something here to select current status --}}
-            <option value=""></option>
-            <option value="BESTÄTIGT">Bestätigt</option>
-            <option value="VERSCHOBEN">Verschoben</option>
-            <option value="ABGESAGT">Abgesagt</option>
-        </select>
+    <label for="venue">Veranstaltungsort</label>
+    <input type="text" name="venue" id="venue" {{#if status}}value="{{gig.venue}}" {{/if}} required>
 
-        <label for="comment">Weitere Infromationen</label>
-        <textarea name="comment" id="comment" cols="30" rows="10" value="{{comment}}"></textarea>
-        
-        <div class="buttonflex">
-            <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
-            <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
-            <a href="#">Zurück</a>
-        </div>
+    <label for="status">Status</label>
+    <select name="status" id="status">
+        {{!-- Need something here to select current status --}}
+        <option value="" selected></option>
+        <option value="BESTÄTIGT">Bestätigt</option>
+        <option value="VERSCHOBEN">Verschoben</option>
+        <option value="ABGESAGT">Abgesagt</option>
+    </select>
 
-    </form>
-</div>
+    <label for="comment">Weitere Infromationen</label>
+    <textarea name="comment" id="comment" cols="30" rows="5" {{#if status}}value="{{gig.comment}}" {{/if}}></textarea>
+
+    <div class="buttonflex">
+        {{#if status}}<button class="edit-button" type="submit" formaction="/gig/{{gig._id}}/edit">Änderungen
+            speichern</button>{{else}}
+        <button class="add-button" type="submit" formaction="/gig/add">Hinzufügen</button>{{/if}}
+        <a href="/maintainGigsList">Zurück</a>
+    </div>
+
+</form>

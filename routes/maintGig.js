@@ -1,54 +1,88 @@
 // ROUTES TO MANAGE GIG RECORDS
 
 const express = require('express');
-const router  = express.Router();
+const router = express.Router();
 const Admin = require('../models/Admin');
 const Gig = require('../models/Gig');
 
-const loginCheck = () => {
-    return (req, res, next) => {
-        if (req.session.user){
-            next();
-        } else {
-            res.redirect('/webmaster')
-        }
-    }
-  }
 
-//router.get('/gig/delete/:id', (req, res) => {
-    //delete an gig
-// });
+router.get('/gig/:id/delete', (req, res) => {
+    console.log(`delete gig`);
+    Gig.findByIdAndRemove({ _id: req.params.id })
+        .then(() => {
+            res.redirect('/maintainGigList')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
 
-//router.get('/gig/edit/:id', (req, res) => {
-    //open gig edit form
-// });
+router.get('/gig/:id/edit', (req, res) => {
+    console.log(`open gig edit form`);
+    Gig.findById(req.params.id)
+        .then(gig => {
+            console.log(gig);
+            res.render("maintenance/gigs/editGig", { gig, status: 'edit' });
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
 
-//router.post('/gig/edit/:id', (req, res) => {
-    //update gig based on edit form
-// });
+router.post('/gig/:id/edit', (req, res) => {
+    console.log(`edit gig from form`)
+    const { date, enddate, town, venue, status, comment } = req.body;
+    Gig.findByIdAndUpdate(req.params.id, {
+        date: date,
+        enddate: enddate,
+        town: town,
+        venue: venue,
+        state: status,
+        comment: comment
+    })
+        .then(gig => {
+            console.log(`gig updated`);
+            res.redirect('/maintainGigsList')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
 
-//router.get('/gig/add/', (req, res) => {
-    //open gig add form
-// });
+router.get('/maintainGigsAdd', (req, res) => {
+    console.log(`open gig add form`);
+    res.render("maintenance/gigs/editGig")
+});
 
-//router.post('/gig/add/', (req, res) => {
-    //create new gig based on form 
-// });
-
-
+router.post('/gig/add/', (req, res) => {
+    console.log(`add gig from form`)
+    const { date, enddate, town, venue, status, comment } = req.body;
+    Gig.create({
+        date: date,
+        enddate: enddate,
+        town: town,
+        venue: venue,
+        state: status,
+        comment: comment
+    })
+        .then(gig => {
+            console.log(`gig created`);
+            res.redirect('/maintainGigsList')
+        })
+        .catch(err => {
+            console.log(err)
+        })
+});
 
 router.post('/maintainGigsAdd', (req, res, next) => {
     //create new/news based on form
     const { date, enddate, town, venue, status, comment } = req.body;
     // console.log("got this title" , title);
-    Gig.create({ date: date, enddate: enddate, town: town, venue: venue, status: status, comment: comment }).then(() =>{
+    Gig.create({ date: date, enddate: enddate, town: town, venue: venue, status: status, comment: comment }).then(() => {
         // res.render('news')})
         res.redirect('/gigs')
     });
 });
-        
-
-
 
 
 module.exports = router;

@@ -11,7 +11,7 @@ const path = require('path');
 
 
 mongoose
-  .connect(`mongodb://process.env.MONGODB_URI ||localhost/PROJECT-Jan-Hirte`, {
+  .connect(`mongodb://localhost/PROJECT-Jan-Hirte`, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,
@@ -57,12 +57,12 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 app.use(session({
   secret: process.env.SESSION_SECRET,
-  cookie: { maxAge: 1000 * 60 * 30 },
+  cookie: { maxAge: 1000 * 60 * 60 * 60},
   saveUninitialized: false,
   resave: true,
   store: new MongoStore({
     mongooseConnection: mongoose.connection,
-    ttl: 1000 * 60 * 30
+    ttl: 1000 * 60 * 60 * 60
   })
 })
 )
@@ -77,9 +77,6 @@ app.use('/', auth);
 
 const index = require('./routes/index');
 app.use('/', index);
-
-const maintAdmin = require('./routes/maintAdmin');
-app.use('/', maintAdmin);
 
 const maintGig = require('./routes/maintGig');
 app.use('/', maintGig);
