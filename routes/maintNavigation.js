@@ -25,7 +25,9 @@ router.get('/adminMenu', loginCheck(), (req, res, next) => {
 });
 
 router.get('/maintainAdminsAdd', loginCheck(), (req, res, next) => {
+
     res.render(`maintenance/admins/addAdmin`)
+
 });
 
 router.get('/maintainAdminsList', loginCheck(), (req, res, next) => {
