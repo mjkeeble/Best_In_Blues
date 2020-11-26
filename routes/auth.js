@@ -39,7 +39,7 @@ router.post('/login', (req, res, next) => {
         })
 });
 
-router.post('/admin/add', (req, res, next) => {
+router.post('/admin/add', loginCheck(), (req, res, next) => {
     const { adminName, password, password2 } = req.body;
     // check pasword length
     if (password.length < 8) {
@@ -80,6 +80,61 @@ router.get('/logout', (req, res, next) => {
     })
 });
 
+router.get('/admin/:id/delete', loginCheck(), (req, res) => {
+    Admin.find()
+        .then(adminList => {
+            if (adminList.length <= 1) {
+                return;
+            } else {
+                //identify if it is the current user. If so 
+                // terminate session after deletion of user
+                Admin.findByIdAndRemove(req.params.id)
+                    .then(() => {
+                        res.redirect('/maintainAdminsList')
+                    })
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+})
 
+router.post('/admin/:id/edit', loginCheck(), (req, res) => {
+    console.log(`load edit admin form`);
+    const { adminName, email, OldPassword, NewPassword, newPassword2 } = req.body;
+    if (OldPassword === '' && NewPassword === '' && newPassword2 === '') {
+            Admin.findByIdAndUpdate(req.params.id, {
+                adminName: adminName,
+                email: email
+            })
+        return;
+    }
+    if (OldPassword === '' ||
+        NewPassword === '' ||
+        newPassword2 === '' ||
+        NewPassword !== newPassword2) {
+        Admin.findById(req.params.id)
+        then(found => {
+            res.render('maintenance/admins/editAdmin', { found, message: "Passwörter haben nicht gestimm. Bitte nochmal versuchen" });
+            return;
+        })
+    }
+    Admin.findById(req.params.id)
+        .then(found => {
+            if (bcrypt.compareSync(OldPassword, found.password)) {
+                const salt = bcrypt.genSaltSync()
+                const hash = bcrypt.hashSync(NewPassword, salt);
+                Admin.findByIdAndUpdate(req.params.id, {
+                    adminName: adminName,
+                    email: email,
+                    password: hash
+                })
+                res.redirect("/maintainAdminsList")
+            }
+        })
+        .catch(err => {
+            console.log(err);
+        });
+});
 
 module.exports = router;

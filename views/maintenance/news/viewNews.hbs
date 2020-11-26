@@ -1,5 +1,5 @@
 <h1>Aktuelles</h1>
-<a href="/adminMenu">Menü</a>
+<a href="/adminMenu">AdminMenü</a>
 
 {{#each news}}
 <form  action="#" method="get"  class="goldbox-h">
@@ -7,9 +7,7 @@
     <h3>{{title}}</h3>
     <p>{{updated_at}}</p>
 </div>
-    <div class="buttonflex">
         <button type="submit" formaction="/news/{{_id}}/edit">Bearbeiten</button>
         <button type="submit" formaction="/news/{{_id}}/delete">Löschen</button>
-    </div>
     </form>
 {{/each}}
