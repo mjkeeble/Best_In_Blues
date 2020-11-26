@@ -2,21 +2,25 @@
 {{#each project}}
 <div class="goldbox">
     <h2>{{name}}</h2>
-    {{#if image}}
-    <img class="project-image" src="{{image}}" alt="{{name}}" style="height:auto; width:500px">
-    {{!-- remove styling here --}}
-    {{/if}}
-
-    <div>
-        <p>{{description}}</p>
-        {{#if linkUrl}}
-        <a href="{{linkUrl}}"><bold>{{linkText}}</bold></a>
+    <div class="container-fluid">
+        {{#if image}}
+        <img class="project-image col-xs-12 col-sm-12 col-md-6 col-lg-4 col-xl-4" src="{{image}}" alt="{{name}}" style="height:auto; width:100%">
+        {{!-- remove styling here --}}
         {{/if}}
-        <ul>
-            {{#each members}}
-            <li>{{member}}</li>
-            {{/each}}
-        </ul>
+
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-8 col-xl-8">
+            <p>{{description}}</p>
+            {{#if linkUrl}}
+            <a href="{{linkUrl}}">
+                <bold>{{linkText}}</bold>
+            </a>
+            {{/if}}
+            <ul>
+                {{#each members}}
+                <li>{{member}}</li>
+                {{/each}}
+            </ul>
+        </div>
     </div>
 </div>
 
