@@ -1,27 +1,28 @@
-<h1>Meldung bearbeiten</h1>
-{{news}}
-<div class="goldbox">
-    <form action="#" method="post">
-        <label for="title">Titel</label>
-        <input type="text" name="title" id="title" value="{{title}}" required>
+<h1> {{#if status}}Meldung bearbeiten{{else}}Neue Meldung erstellen{{/if}}</h1>
 
-        <label for="text">Text</label>
-        <textarea name="text" id="text" width="100%" rows="10" value="{{text}}" required></textarea>
 
-        <label for="image"></label>
-        {{!-- image upload with Couldinary --}}
+<form action="#" method="post" class="goldbox">
+    <label for="title">Titel</label>
+    <input type="text" name="title" id="title" {{#if status}}value="{{news.title}}" {{/if}} required>
 
-        {{!-- how to manage multiple urls?? --}}
-        <label for="url">Link url</label>
-        <input type="text" name="url" id="url" value="url">
+    <label for="text">Text</label>
+    <textarea name="text" id="text" width="100%" rows="10"
+        required>{{#if status}}{{news.text}}{{/if}}</textarea>
 
-        <label for="linkText">Linkbeschriftung</label>
-        <input type="text" name="linkText" id="linkText" value="linkText">
+    {{!-- <label for="image"></label> --}}
+    {{!-- image upload with Couldinary --}}
 
-        <div class="buttonflex">
-            <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
-            <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
-            <a href="#">Zurück</a>
-        </div>
-    </form>
-</div>
+    {{!-- how to manage multiple urls?? --}}
+    {{!-- <label for="url">Link url</label>
+    <input type="text" name="url" id="url" {{#if status}}value="{{news.link.url}}"{{/if}}>
+
+    <label for="linkText">Linkbeschriftung</label>
+    <input type="text" name="linkText" id="linkText" {{#if status}}value="{{news.link.linkText}}"{{/if}}> --}}
+
+    <div class="buttonflex">
+        {{#if status}}<button class="edit-button" type="submit" formaction="/news/{{news._id}}/edit">Änderungen speichern</button>{{else}}
+        <button class="add-button" type="submit" formaction="/news/add">Hinzufügen</button>{{/if}}
+        <a href="/maintainNewsList">Zurück</a>
+    </div>
+
+</form>

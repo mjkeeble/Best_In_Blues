@@ -61,7 +61,7 @@ console.log(gig);
 
 router.get('/news', (req, res, next) => {
   console.log(`calling news page`);
-  News.find()
+  News.find().sort({updated_at: 'desc'})
     .then(news => {
       res.render('news', { news });
     })

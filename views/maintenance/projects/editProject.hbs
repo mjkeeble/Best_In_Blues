@@ -8,8 +8,7 @@
     {{!-- how to input?manage multiple members --}}
 
     <label for="description">Beschreibung</label>
-    <textarea name="description" id="description" width="100%" rows="5" {{#if status}}value="{{project.description}}"
-        {{/if}}></textarea>
+    <textarea name="description" id="description" width="100%" rows="5" >{{#if status}}{{project.description}}{{/if}}</textarea>
 
     <label for="image">Bild (url)</label>
     <input type="text" name="image" id="image" {{#if status}}value="{{project.image}}" {{/if}}>
