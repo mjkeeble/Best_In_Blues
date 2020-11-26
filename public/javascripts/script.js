@@ -5,8 +5,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const  myFunction = () =>  {
 
-  
-console.log('We got here')
+  console.log('We got here')
+  let thisMessage = form.get("message");
 console.log(Email)
   Email.send({
     Host : "webmail.email.hosting",
@@ -15,10 +15,12 @@ console.log(Email)
     To : 'me@williamcampbell.info',
     From : "me@williamcampbell.ie",
     Subject : "This is the subject",
-    Body : yaddamessage
+    Body:  thisMessage,
+    // Body : document.querySelector("message") 
 }).then(
   message => console.log(message) //alert(message)
   ,
 );
 }
+
 
