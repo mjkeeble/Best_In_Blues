@@ -35,7 +35,7 @@ router.get('/projects', (req, res, next) => {
 });
 
 router.get('/gigs', (req, res, next) => {
-  console.log(`calling gigs page`);
+  console.log(`****  calling gigs page`);
   let today = new Date()
   Gig.find({ date: { $gte: (today) } })
     .then(gig => {
@@ -74,5 +74,22 @@ router.get('/contact', (req, res, next) => {
 
   res.render('contact');
 });
+
+
+// router.post('/contact', (req, res, next) => {
+ 
+
+//   Email.send({ // Trying email sender - William
+//     SecureToken : "50684a98-6b54-4631-9d4d-4f12437dd8b1",
+//     To : 'me@williamcmapbell.ie',
+//     From : "hirte@website.test",
+//     Subject : "This is the subject",
+//     Body : "And this is the body"
+//   }).then(
+//     message => alert("the message has been sent")
+//     );
+    
+    
+// });
 
 module.exports = router;

@@ -8,7 +8,9 @@ const hbs = require('hbs');
 const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
-var helpers = require('handlebars-helpers')(); // William diddit for formatting dates
+// const helpers = require('handlebars-helpers')(); // William diddit for formatting dates
+
+
 
 mongoose
   .connect(process.env.MONGODB_URI || `mongodb://localhost/PROJECT-Jan-Hirte`, {
