@@ -61,6 +61,8 @@ hr{
 h1{
     font-family: 'Rock Salt',  cursive;
     margin-left: 10px;
+    padding-left: 7%;
+    padding-top: 30px;
 }
 
 .navbar_logo{
@@ -116,7 +118,7 @@ nav a:hover {
     background: $blue-4;
     padding: 2em;
     padding-top: 0;
-    height: 700px;
+    // height: 700px;
 }
 
 .big_logo{
@@ -195,7 +197,7 @@ body{
 
 .container{
 display: flex;
-height:60vh;
+// height:60vh;
 align-items: center;
 
 }

@@ -74,7 +74,7 @@ router.post('/gig/add/', (req, res) => {
         })
 });
 
-router.post('/maintainGigsAdd', (req, res, next) => {
+router.post('/maintainGigsAdd',  (req, res, next) => {
     //create new/news based on form
     const { date, enddate, town, venue, status, comment } = req.body;
     // console.log("got this title" , title);
