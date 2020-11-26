@@ -24,7 +24,7 @@ router.get('/adminMenu', loginCheck(),  (req, res, next) => {
     res.render('maintenance/adminMenu');
 });
 
-router.get('/maintainAdminsAdd',  loginCheck(),  (req, res, next) => {
+router.get('/maintainAdminsAdd', (req, res, next) => {
 res.render(`maintenance/admins/addAdmin`)
 });
 
