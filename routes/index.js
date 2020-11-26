@@ -7,15 +7,7 @@ const Project = require('../models/Project');
 const ShopArticle = require('../models/ShopArticle');
 const moment = require('moment');
 
-const loginCheck = () => {
-  return (req, res, next) => {
-    if (req.session.user) {
-      next();
-    } else {
-      res.redirect('/webmaster')
-    }
-  }
-}
+
 
 /* GET home page */
 router.get('/', (req, res, next) => {

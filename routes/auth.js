@@ -3,6 +3,15 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const Admin = require('../models/Admin');
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user) {
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+}
 
 router.get('/webmaster', (req, res, next) => {
     res.render('maintenance/adminLogin');
@@ -38,7 +47,7 @@ router.post('/admin/add', (req, res, next) => {
         return;
     }
     //  check if both versions of teh password are the same
-        if (password !== password2){
+    if (password !== password2) {
         res.render('maintenance/admins/addAdmin', { message: 'Die eingegebenen Passwörter sind nicht gleich. Bitte noch mal versuchen' });
         return;
     }

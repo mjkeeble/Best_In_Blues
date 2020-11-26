@@ -5,8 +5,17 @@ const router = express.Router();
 const Admin = require('../models/Admin');
 const News = require('../models/News');
 
+const loginCheck = () => {
+    return (req, res, next) => {
+        if (req.session.user) {
+            next();
+        } else {
+            res.redirect('/webmaster')
+        }
+    }
+}
 
-router.get('/news/:id/delete', (req, res) => {
+router.get('/news/:id/delete', loginCheck(), (req, res) => {
     console.log(`delete news item`);
     News.findByIdAndRemove({ _id: req.params.id })
         .then(() => {
@@ -17,7 +26,7 @@ router.get('/news/:id/delete', (req, res) => {
         })
 });
 
-router.get('/news/:id/edit', (req, res) => {
+router.get('/news/:id/edit', loginCheck(),(req, res) => {
     console.log('open/news edit form')
     
     News.findById(req.params.id)
@@ -46,7 +55,7 @@ router.post('/news/:id/edit', (req, res) => {
     })
 });
 
-router.get('/news/add/', (req, res) => {
+router.get('/news/add/', loginCheck(), (req, res) => {
     res.render("maintenance/news/editNews")
 });
 
