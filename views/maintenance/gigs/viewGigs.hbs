@@ -2,9 +2,11 @@
 <a href="/adminMenu">Menü</a>
 
 {{#each gig}}
-<form action="#" method="get"  class="goldbox">
-    <p>Datum: {{date}}</p>
+<form action="#" method="get"  class="goldbox-h">
+    <div style="width:700px">
+    <p>{{date}}</p>
     <p>{{venue}}, {{town}}</p>
+    </div>
     <div class="buttonflex">
         <button type="submit" formaction="/gig/{{_id}}/edit">Bearbeiten</button>
         <button type="submit" formaction="/gig/{{_id}}/delete">Löschen</button>

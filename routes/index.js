@@ -46,6 +46,8 @@ router.get('/gigs', (req, res, next) => {
   let today = new Date()
   Gig.find({date: {$gte: (today) } } )
   .then(gig =>{
+    console.log(gig);
+    
   res.render('gigs', { gig });
   })
   .catch(err =>
