@@ -9,13 +9,13 @@ const  myFunction = () =>  {
 console.log('We got here')
 console.log(Email)
   Email.send({
-    Host : "smtp.gmail.com",
-    Username : "me@williamcampbell.ie",
-    Password : "doctoranglorisktom",
+    Host : "webmail.email.hosting",
+    Username : "william@esatclear.ie",
+    Password : "92za9!eW",
     To : 'me@williamcampbell.info',
     From : "me@williamcampbell.ie",
     Subject : "This is the subject",
-    Body : "And this is the body"
+    Body : yaddamessage
 }).then(
   message => console.log(message) //alert(message)
   ,
