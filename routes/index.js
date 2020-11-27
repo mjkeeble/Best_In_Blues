@@ -37,7 +37,7 @@ router.get('/projects', (req, res, next) => {
 router.get('/gigs', (req, res, next) => {
   console.log(`****  calling gigs page`);
   let today = new Date()
-  Gig.find({ date: { $gte: (today) } })
+  Gig.find({ date: { $gte: (today) } }).sort({ date: 'asc' })
     .then(gig => {
       console.log(gig);
       gig.forEach(event => {
