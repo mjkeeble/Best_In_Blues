@@ -8,14 +8,14 @@
 
     <label for="email">Email</label>
     <input type="email" name="email" id="email" value="{{email}}" required>
-<label for="OldPassword">Alte Passwort</label>
-<input type="password" name="OldPassword" id="OldPassword">
+    <label for="OldPassword">Alte Passwort</label>
+    <input type="password" name="OldPassword" id="OldPassword">
 
-<label for="NewPassword">Alte Passwort</label>
-<input type="password" name="NewPassword" id="NewPassword">
+    <label for="NewPassword">Alte Passwort</label>
+    <input type="password" name="NewPassword" id="NewPassword">
 
-<label for="newPassword2">Alte Passwort</label>
-<input type="password" name="newPassword2" id="newPassword2">
+    <label for="newPassword2">Alte Passwort</label>
+    <input type="password" name="newPassword2" id="newPassword2">
 
     {{#if message}}
     <p>{{message}}</p>
@@ -25,4 +25,5 @@
         <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
         <a href="#">Zurück</a>
     </div>
+    {{/admin}}
 </form>

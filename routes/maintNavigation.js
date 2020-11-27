@@ -90,7 +90,7 @@ router.get('/maintainShopList', loginCheck(), (req, res, next) => {
     console.log(`calling shop article list`);
     ShopArticle.find().sort({ year: 'desc' })
         .then(shopArticle => {
-            res.render('maintenance/shopArticles/viewshopArticles', { shopArticle })
+            res.render('maintenance/shopArticles/viewShopArticles', { shopArticle })
         })
         .catch(err =>
             console.log(`Error while getting shopArticles:`, err));

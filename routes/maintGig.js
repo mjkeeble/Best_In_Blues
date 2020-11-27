@@ -20,7 +20,7 @@ router.get('/gig/:id/delete', loginCheck(), (req, res) => {
     console.log(`delete gig`);
     Gig.findByIdAndRemove({ _id: req.params.id })
         .then(() => {
-            res.redirect('/maintainGigList')
+            res.redirect('/maintainGigsList')
         })
         .catch(err => {
             console.log(err)
