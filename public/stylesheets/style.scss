@@ -57,10 +57,20 @@ a {
     color:$blue-3;
 }
 
+footer{
+    background-color: $blue-0;
+    padding: 5px;
+    border-top: 1px solid $blue-4;
+    p{
+        text-align: center;
+    }
+}
+
 p {
     font-size: 1.2em;
     line-height: 1.4em;
 }
+
 hr{
     max-width: 100%;
     color: $blue-4;
@@ -111,7 +121,6 @@ nav {
         }
     }
 }
-
 
 .container-fluid{
     display:flex;
@@ -203,15 +212,10 @@ body{
     flex: 6;
 }
 
-
-
-
-
 .container{
 display: flex;
 // height:60vh;
 align-items: center;
-
 }
 
 .box:nth-of-type(1) {
@@ -258,9 +262,16 @@ align-items: center;
 }
 
 .projectflex {
-display: flex;
-flex-direction: row;
+align-items: flex-start;
+}
+.menubox {
+    justify-content:space-between; 
+    width:1000px;
+}
 
+.datestamp {
+color:$blue-2;
+text-align: right;
 }
 
 .articleDetails{
