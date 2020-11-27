@@ -1,19 +1,15 @@
 <h1>Projekte</h1>
-<a href="#">Menü</a>
+<a href="/adminMenu">AdminMenü</a>
 
 {{#each project}}
-<div class="goldbox-h">
-    <p>Projektname: {{name}}</p>
+<div class="goldbox-h menubox" >
+    <h3>{{name}}</h3>
 
-    <div class="buttonflex">
-        <button type="submit" formaction="/news/{{_id}}/edit">Bearbeiten</button>
-        <button type="submit" formaction="/news/{{_id}}/delete">Löschen</button>
-    </div>
+    <form class="buttonflex">
+        <button type="submit" formaction="/project/{{_id}}/edit">Bearbeiten</button>
+        <button type="submit" formaction="/project/{{_id}}/delete">Löschen</button>
     </form>
 
-    <div class="buttonflex">
-        <a href="/project/{{_id}}/edit">Bearbeiten</a>
-        <a href="/project/{{_id}}/delete">Löschen</a>
-    </div>
+
 </div>
 {{/each}}
