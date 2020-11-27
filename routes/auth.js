@@ -27,6 +27,11 @@ router.get('/admin/:id/edit', loginCheck(), (req, res) => {
         });
 })
 
+router.get('/thanks', (req, res, next) => {
+    res.render('thanks');
+});
+
+
 router.post('/login', (req, res, next) => {
     // get username and password
     const { adminName, password } = req.body;
