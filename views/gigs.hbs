@@ -1,21 +1,17 @@
 <h1>Termine</h1>
 {{#each gig}}
-<div class="goldbox">
-    <table>
-        <tr>
-            {{!-- <th>{{formatTime date "MM-DD-YYYY"}}{{#if enddate}} - {{enddate}}{{/if}}</th> --}}
-            <th>{{date}}{{#if enddate}} - {{enddate}}{{/if}}</th>
-            <th>{{town}}</th>
-            <th>{{status}}</th>
-        </tr>
-        <tr>
-            <td></td>
-            <td>{{venue}}{{#if comment}}
-                <br>
-                {{comment}}{{/if}}
-            </td>
-        </tr>
-    </table>
+<div class="goldbox-h" style="width: auto; justify-content:space-between">
+    <div>
+        <p><strong>{{date}}</strong>{{#if enddate}} bis <br> {{enddate}}{{/if}}</p>
+
+        <p>{{status}}</p>
+        <p>{{#if comment}}{{comment}}{{/if}}</p>
+    </div>
+
+    <div>
+        <p style="text-align: right;">{{town}}</p>
+        <p style="text-align: right;">{{venue}}</p>
+    </div>
 </div>
 
 {{/each}}

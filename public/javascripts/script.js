@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const  myFunction = () =>  {
 
   console.log('We got here')
+  let form = new FormData(document.getElementById("contactForm"));
   let thisMessage = form.get("message");
 console.log(Email)
   Email.send({

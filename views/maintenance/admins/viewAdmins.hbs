@@ -1,12 +1,15 @@
 <h1>Administratoren</h1>
-<a href="#">Menü</a>
-
+<a href="/adminMenu">AdminMenü</a>
+{{message}}
 {{#each admin}}
-<div class="goldbox-h">
-    <h3>{{adminName}}</h3>
+<form action="#" method="get" class="goldbox-h menubox">
+    <div>
 
-        <a href="#">Bearbeiten</a>
-        <a href="#">Löschen</a>
+        <h3>{{adminName}}</h3>
+    </div>
+    <button type="submit" formaction="/admin/{{_id}}/edit">Bearbeiten</button>
+    <button type="submit" formaction="/admin/{{_id}}/delete">Löschen</button>
 
-</div>
+</form>
+
 {{/each}}
