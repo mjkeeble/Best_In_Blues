@@ -2,14 +2,14 @@
 <a href="/adminMenu">AdminMenü</a>
 {{message}}
 {{#each admin}}
-<form action="#" method="get" class="goldbox-h">
-    <div style="width:700px">
+<form action="#" method="get" class="goldbox-h menubox">
+    <div>
 
         <h3>{{adminName}}</h3>
-
-        <button type="submit" formaction="/admin/{{_id}}/edit">Bearbeiten</button>
-        <button type="submit" formaction="/admin/{{_id}}/delete">Löschen</button>
     </div>
+    <button type="submit" formaction="/admin/{{_id}}/edit">Bearbeiten</button>
+    <button type="submit" formaction="/admin/{{_id}}/delete">Löschen</button>
+
 </form>
 
 {{/each}}

@@ -2,10 +2,10 @@
 <a href="/adminMenu">AdminMenü</a>
 
 {{#each news}}
-<form  action="#" method="get"  class="goldbox-h">
+<form  action="#" method="get"  class="goldbox-h" style="justify-content:space-between">
 <div  style="width: 1000px">
     <h3>{{title}}</h3>
-    <p>{{updated_at}}</p>
+    <p class="datestamp">{{updated_at}}</p>
 </div>
         <button type="submit" formaction="/news/{{_id}}/edit">Bearbeiten</button>
         <button type="submit" formaction="/news/{{_id}}/delete">Löschen</button>
