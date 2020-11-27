@@ -14,15 +14,26 @@ router.get('/', (req, res, next) => {
   res.render('index');
 });
 
+// router.get('/shop', (req, res, next) => {
+//   ShopArticle.find().sort({ year: 'desc' })
+//   console.log('ShopArticle', ShopArticle)
+//   // console.log('**** calling shop');
+//     .then(article => {
+//       res.render('shop/shopArticles', { article: article });
+//     })
+//     .catch(err =>
+//       console.log(`Error while getting articles:`, err));
+// });
+
 router.get('/shop', (req, res, next) => {
-  console.log(`calling shop`);
-  ShopArticle.find().sort({ year: 'desc' })
+  ShopArticle.find()
     .then(article => {
-      res.render('shop/shopArticles', { article: article });
+      res.render('shop/shopArticles', { article });
     })
     .catch(err =>
-      console.log(`Error while getting articles:`, err));
+      console.log(`Error while getting projects:`, err));
 });
+
 
 router.get('/projects', (req, res, next) => {
   Project.find({ display: true }).sort({ name: 1 })

@@ -290,6 +290,11 @@ align-items: center;
 
 .albumImage{
     padding-left: 10px;
+    display: block;
+    max-width:250px;
+    max-height:250px;
+    width: auto;
+    height: auto;
 }
 
 #cdPayPalButton {

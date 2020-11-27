@@ -1,81 +1,41 @@
 <h1>Shop</h1>
 
-
-
-{{!-- 
 {{#each article}}
-
 <div class="goldbox">
-    <form action="/addArticle/{{_id}}" method="get"></form>
-    <img src="{{image}}" alt="{{title}}">
+    <div class="warenKorb">
+        {{!-- Warenkorb hard pappal code here --}}
+        <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
+        <input type="hidden" name="cmd" value="_s-xclick">
+        <input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
+        <input type="image" src="http://williamcampbell.ie/LanguageLearner/button_zum-warenkorb.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+        <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+        </form>
+        {{!-- End paypal Warenkorb code --}}
+    </div>
     <div class="articleDetails">
-
-    </div>
-    <div class="purchase">
-        <p>Verfügbar: {{#if available}}Ja{{else}}Nein{{/if}}</p>
-        {{#if delivery}}<p>Lieferzeit: {{delivery}}</p>
-        {{#if available}} <h6>Preis: €{{preis}}*</h6>
-<button type="submit">In den Warenkorb</button>
-    </div>
-</div>
-{{/each}}
-<p id="versandkosten">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
- --}}
-
-
-{{!-- put this between Each and end each --}}
-
-<div class="goldbox">
-<div class="warenKorb">
-
-
-<form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post" >
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="encrypted" value="-----BEGIN PKCS7-----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-----END PKCS7-----">
-<input type="image" src="http://williamcampbell.ie/LanguageLearner/button_zum-warenkorb.png" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-
-
-    </div>
-{{!-- <form action="/addArticle/{{_id}}" method="get"></form> --}}
-<div class="articleDetails">
-    <div><img class="albumImage" src="https://image.jimcdn.com/app/cms/image/transf/dimension=150x150:mode=crop:format=png/path/se8a40333f3abacbd/image/i4e7297302814f7da/version/1394990845/image.png" alt="Ginger Blues unknowable journey"></div>
-    <div class="purchase">
-        <div class="albumTitle">Album Title</div>
-        <div class="description">Die neue CD des Berliner Quartetts um die charismatische Sängerin Jessie Gordon aus Australien. Nominiert für den deutschen Schallplattenpreis!
-            <div class="buy">
-         
-         <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
-<input type="hidden" name="cmd" value="_s-xclick">
-<input type="hidden" name="hosted_button_id" value="X2F5MCGH8KRLY">
-<input type="image" src="http://williamcampbell.ie/LanguageLearner/button_in-den-warenkorb.png" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
-<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-</form>
-
-
-
-                <div class="buyDetails">
-                    <div>Verfügbar: Ja</div>
-                    <div>Lieferzeit:2 Tage</div>
+        <div><img class="albumImage" src="{{image}}" alt="{{title}}"></div>
+        <div class="purchase">
+            <div class="albumTitle">{{title}}</div>
+            <div class="description">{{description}}
+                <div class="buy">
+                    <form target="paypal" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                    <input type="hidden" name="cmd" value="_s-xclick">
+                    <input type="hidden" name="hosted_button_id" value="X2F5MCGH8KRLY">
+                    <input type="image" src="http://williamcampbell.ie/LanguageLearner/button_in-den-warenkorb.png" border="0" name="submit" alt="Jetzt einfach, schnell und sicher online bezahlen – mit PayPal.">
+                    <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                    </form>
+                    <div class="buyDetails">
+                        <div>Verfügbar: Ja</div>
+                        <div>Lieferzeit: {{delivery}} </div>
+                    </div>
                 </div>
             </div>
+            <div class="buyDetails">jahr: {{year}}</div>
+            <div class="price">{{price}}€</div>
         </div>
-        <div class="price">€18.00*</div>
     </div>
-
-
+    <p> </p>
+    <p id="warenKorb">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
 </div>
-
-
-<p> </p>
-    
-<p id="warenKorb">* Alle Presie zuzüglich  Versand pro Bestellung: Deutschland: €1,50 pro Bestellung, Rest der Welt €5,00 pro Bestellung</p>
-
-
-
-    </div>
-
-
+{{/each}}
 
