@@ -1,13 +1,13 @@
 <h1>Admin bearbeiten</h1>
-{{#with admin}}
 
-<form action="/admin/{{_id}}/edit" method="get" class="goldbox">
+
+<form action="/admin/{{admin._id}}/edit" method="get" class="goldbox">
 
     <label for="adminName">Name</label>
-    <input type="text" name="adminName" id="adminName" value="{{adminName}}" required>
+    <input type="text" name="adminName" id="adminName" value="{{admin.adminName}}" required>
 
     <label for="email">Email</label>
-    <input type="email" name="email" id="email" value="{{email}}" required>
+    <input type="email" name="email" id="email" value="{{admin.email}}" required>
     <label for="OldPassword">Alte Passwort</label>
     <input type="password" name="OldPassword" id="OldPassword">
 
@@ -22,8 +22,7 @@
     {{/if}}
     <div class="buttonflex">
         <button class="edit-button" name="action" type="submit" value="edit">Änderungen speichern</button>
-        <button class="delete-button" name="action" type="submit" value="delete">Löschen</button>
         <a href="#">Zurück</a>
     </div>
-    {{/admin}}
+  
 </form>
