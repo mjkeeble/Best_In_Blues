@@ -17,6 +17,10 @@ router.get('/webmaster', (req, res, next) => {
     res.render('maintenance/adminLogin');
 });
 
+router.get('/thanks', (req, res, next) => {
+    res.render('thanks');
+});
+
 router.post('/login', (req, res, next) => {
     // get username and password
     const { adminName, password } = req.body;
