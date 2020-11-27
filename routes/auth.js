@@ -17,9 +17,20 @@ router.get('/webmaster', (req, res, next) => {
     res.render('maintenance/adminLogin');
 });
 
+router.get('/admin/:id/edit', loginCheck(), (req, res) => {
+    Admin.findById(req.params.id)
+        .then(admin =>{
+            res.render('maintenance/admins/editAdmin', { admin })
+        })
+        .catch(err => {
+            console.log(err);
+        });
+})
+
 router.get('/thanks', (req, res, next) => {
     res.render('thanks');
 });
+
 
 router.post('/login', (req, res, next) => {
     // get username and password
@@ -107,10 +118,10 @@ router.post('/admin/:id/edit', loginCheck(), (req, res) => {
     console.log(`load edit admin form`);
     const { adminName, email, OldPassword, NewPassword, newPassword2 } = req.body;
     if (OldPassword === '' && NewPassword === '' && newPassword2 === '') {
-            Admin.findByIdAndUpdate(req.params.id, {
-                adminName: adminName,
-                email: email
-            })
+        Admin.findByIdAndUpdate(req.params.id, {
+            adminName: adminName,
+            email: email
+        })
         return;
     }
     if (OldPassword === '' ||
@@ -140,5 +151,7 @@ router.post('/admin/:id/edit', loginCheck(), (req, res) => {
             console.log(err);
         });
 });
+
+
 
 module.exports = router;
