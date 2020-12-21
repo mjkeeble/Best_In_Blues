@@ -13,4 +13,4 @@ The new version will include
 
 ### Project implementation by
 
-Mark J. Keeble
+Mark J. Keeble and William Campbell
