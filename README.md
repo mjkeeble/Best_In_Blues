@@ -5,8 +5,6 @@ Ironhack WebDev Bootcamp - Project 2
 
 <img width="800" alt="janhirte" src="https://user-images.githubusercontent.com/66460031/113014601-040f8e80-917d-11eb-90f2-b50402de07f9.png">
 
-# Introduction
-
 In week six of the Ironhack Web Development Bootcamp we were challenged to develop a full-stack web site using HTML, CSS, Node.js Express, Handlebars and MongoDB. Together with [William Campbell](https://github.com/WilliamCampbellie) I built a musician's website using MongoDB for content managment. The site comprises multiple pages allowing tour dates, projects and recordings to be showcased as well as a basic blog and simple web shop. Separate pages provide an interface for the webmaster to manage content.
 
 ## The challenges
@@ -16,7 +14,7 @@ The main challenges developing this project were:
 * Keeping track of the various routes for front-end rendering and database management
 * Rendering of dates - not an issue we managed to solve during the time available
 
-# What could be better
+## What could be better
 
 There are a number of changes I intend to introduce when updating this project:
 * Move to a front-end framework (probably React)
