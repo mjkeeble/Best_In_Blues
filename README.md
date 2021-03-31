@@ -10,7 +10,7 @@ In week six of the Ironhack Web Development Bootcamp we were challenged to devel
 ## The challenges
 
 The main challenges developing this project were:
-* Getting to grips with Git in a multi-developer situation and deling with merge conflicts
+* Getting to grips with Git in a multi-developer situation and dealing with merge conflicts
 * Keeping track of the various routes for front-end rendering and database management
 * Rendering of dates - not an issue we managed to solve during the time available
 
@@ -18,11 +18,13 @@ The main challenges developing this project were:
 
 There are a number of changes I intend to introduce when updating this project:
 * Move to a front-end framework (probably React)
-* Combine the public and site maintenance views rather than having completely separate pages. This will improve the overall structure and maintenance components can be toggled based on the authorisation module
-* Straemline some aspects of the data models. Introduce a markup editor and image hosting (possibly Cloudinary) for content maintenance.
+* Combine the public and site-maintenance views rather than having completely separate pages. This will improve the overall structure and maintenance components can be toggled using the authorisation module
+* Streamline some aspects of the data models, in particular for blog posts
+* Introduce a markup editor and image hosting (possibly Cloudinary) for content maintenance, perhaps also a date and time picker where appropriate
 * Improve the overall design and correct the rendering of dates
 * Re-implement Paypal for webshop functionality
-* Add the Shopify API to allow record samples to be heard
+* Add the Spotify API to give access to music samples in the web shop
+* Include links in the band profiles to the relevant web shop products 
 * Possibly add a Facebook feed panel.
 
 ## Conclusion
